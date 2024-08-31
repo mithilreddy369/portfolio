@@ -1,0 +1,237 @@
+/* styles.css */
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #e0e0e0; /* Light grey text */
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff; /* White text */
+}
+
+a {
+    text-decoration: none;
+    color: #ffa000; /* Bright orange */
+}
+
+a:hover {
+    color: #ff6f00; /* Darker orange for hover effect */
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1c1c1c; /* Dark grey */
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    color: #ffab40; /* Light orange */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ff6f00; /* Dark orange */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffa000; /* Bright orange for hover effect */
+}
+
+/* Hero Section */
+.hero {
+    background-color: #1e1e1e; /* Very dark grey */
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 4px solid #ff6f00; /* Dark orange accent */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #ffffff; /* White text */
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: #ffab40; /* Light orange */
+}
+
+.social-links a {
+    color: #ffab40; /* Light orange */
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+.social-links a:hover {
+    color: #ff6f00; /* Darker orange */
+}
+
+/* About Section */
+#about {
+    background-color: #1e1e1e; /* Very dark grey */
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #ffffff; /* White text */
+    margin-bottom: 1rem;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #121212; /* Dark background */
+    padding: 3rem 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-box {
+    background-color: #1c1c1c; /* Dark grey */
+    border: 1px solid #333333; /* Slightly lighter grey */
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    flex: 1 1 calc(33.333% - 1rem);
+    box-sizing: border-box;
+}
+
+.skill-box h4 {
+    font-size: 1.25rem;
+    color: #ff6f00; /* Dark orange */
+    text-align: center;
+}
+
+.skill-box p {
+    color: #e0e0e0; /* Light grey text */
+    text-align: center;
+}
+
+/* Projects Section */
+#projects {
+    background-color: #1e1e1e; /* Very dark grey */
+    padding: 3rem 0;
+}
+
+.section-title {
+    text-align: center; /* Centered heading */
+    font-size: 2rem;
+    color: #ffffff; /* White text */
+    margin-bottom: 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    background-color: #1c1c1c; /* Dark grey */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 8px rgba(255, 105, 0, 0.4); /* Orange shadow */
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #ffffff; /* White text */
+    margin-bottom: 0.5rem;
+    text-align: center; /* Centered title */
+}
+
+.card-text {
+    color: #ffab40; /* Light orange */
+    margin-bottom: 1rem;
+    text-align: center; /* Centered text */
+}
+
+.btn-custom {
+    background-color: #ff6f00; /* Dark orange */
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s;
+    display: block; /* Full width button */
+    margin: 0 auto; /* Center button */
+}
+
+.btn-custom:hover {
+    background-color: #ffa000; /* Bright orange */
+}
+
+/* Footer */
+.footer {
+    background-color: #1c1c1c; /* Dark grey */
+    color: #e0e0e0; /* Light grey text */
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .navbar-nav .nav-link {
+        font-size: 0.9rem; /* Adjust for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .skill-box {
+        flex: 1 1 calc(50% - 1rem); /* Two columns on medium screens */
+    }
+
+    .card {
+        margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        font-size: 0.8rem; /* Further adjust for mobile screens */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .skill-box {
+        flex: 1 1 100%; /* Full width on small screens */
+    }
+
+    .card-title {
+        font-size: 1.125rem;
+    }
+
+    .social-links a {
+        font-size: 1.25rem;
+    }
+}
