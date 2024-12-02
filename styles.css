@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* General Settings */
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -5,91 +7,11 @@ body {
     padding: 0;
     background-color: #121212; /* Dark theme background */
     color: #EAEAEA; /* Light text for readability */
-    text-align: center;
+    text-align: center; /* Center align all text */
     overflow-x: hidden;
-    line-height: 1.6; /* Enhanced line height for readability */
 }
 
-/* Global Link Styling */
-a {
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-/* Navigation Bar */
-.navbar {
-    background-color: #1E1E1E;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Deep shadow for better depth */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 2rem;
-    color: #FF5E5E;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 10px 20px;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-.navbar-brand:hover {
-    color: #FFC107;
-    text-shadow: 0 0 12px #FFC107;
-}
-
-.nav-link {
-    color: #EAEAEA;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin-left: 25px;
-    padding: 12px 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: #FF5E5E;
-    transform: scale(1.1);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(45deg, #FF5E5E, #FFC107);
-    color: #121212;
-    padding: 160px 0; /* More spacious hero section */
-    text-align: center;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    font-weight: 800;
-    animation: fadeSlide 1.5s ease-in-out;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    font-weight: 500;
-    margin-top: 20px;
-}
-
-.hero .social-links a {
-    color: #121212;
-    font-size: 2.8rem;
-    margin: 0 20px;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.hero .social-links a:hover {
-    color: #FF5E5E;
-    transform: scale(1.4);
-}
-
-/* Entrance Animation */
+/* Entrance Effect for Name */
 @keyframes fadeSlide {
     0% {
         opacity: 0;
@@ -101,97 +23,149 @@ a {
     }
 }
 
+.hero h1 {
+    animation: fadeSlide 1.5s ease-in-out;
+    font-size: 4rem; /* Emphasized name size */
+    font-weight: 800;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1E1E1E; /* Dark navbar background */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #FF5E5E;
+    text-transform: uppercase;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #FFC107; /* Highlight color on hover */
+    text-shadow: 0 0 8px #FFC107;
+}
+
+.nav-link {
+    color: #EAEAEA;
+    margin-left: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: #FF5E5E;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, #FF5E5E, #FFC107);
+    color: #121212;
+    padding: 100px 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.hero .social-links a {
+    color: #121212;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hero .social-links a:hover {
+    color: #FF5E5E;
+    transform: scale(1.2);
+}
+
 /* Section Titles */
 .section-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
     color: #FF5E5E;
     text-align: center;
-    letter-spacing: 1.5px;
 }
 
 /* About Section */
 #about {
     background-color: #1E1E1E;
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 /* Skills Section */
 #skills {
     background: #121212;
-    padding: 80px 0;
+    padding: 60px 0;
+}
+
+#skills .row {
+    margin-top: 20px;
 }
 
 #skills h4 {
-    font-size: 1.9rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 600;
     color: #FFC107;
-    text-transform: capitalize;
-    margin-bottom: 15px;
 }
 
 #skills p {
-    font-size: 1.1rem;
     color: #EAEAEA;
-    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* Projects Section */
 #projects .card {
     background: #1E1E1E;
-    border: 1px solid #444;
+    border: none;
     color: #EAEAEA;
-    margin-bottom: 35px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #projects .card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.7);
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
 }
 
 .card-title {
     color: #FF5E5E;
-    font-size: 1.7rem;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
 .card-text {
-    font-size: 1.1rem;
-    color: #EAEAEA;
+    font-size: 1rem;
 }
 
-/* Button Styling */
 .btn-custom {
     background-color: #FF5E5E;
     color: #121212;
     font-weight: 600;
-    padding: 14px 30px;
-    border-radius: 30px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
     border: none;
-    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .btn-custom:hover {
     background-color: #FFC107;
     color: #121212;
-    transform: scale(1.05);
 }
 
 /* Certifications Section */
 #certifications ul {
     list-style-type: none;
     padding: 0;
-    font-size: 1.1rem;
 }
 
 #certifications ul li {
-    margin: 12px 0;
+    font-size: 1rem;
+    margin: 10px 0;
     color: #EAEAEA;
 }
 
@@ -208,20 +182,19 @@ a {
 
 /* Achievements Section */
 #achievements ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 #achievements ul li {
-    font-size: 1.1rem;
-    margin: 15px 0;
+    font-size: 1rem;
+    margin: 10px 0;
 }
 
 /* Contact Section */
 #contact a {
     color: #FF5E5E;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 #contact a:hover {
@@ -234,52 +207,29 @@ a {
     background-color: #1E1E1E;
     color: #EAEAEA;
     text-align: center;
-    padding: 25px 0;
-    font-size: 1rem;
+    padding: 15px 0;
+    font-size: 0.9rem;
 }
 
 /* Media Queries for Responsiveness */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     .hero h1 {
-        font-size: 4rem; /* Adjust for larger tablets */
-    }
-
-    .section-title {
         font-size: 2.5rem;
     }
 
-    .card-title {
-        font-size: 1.4rem;
-    }
-
-    .card-text {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem; /* Adjust for mobile screens */
-    }
-
     .hero p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .card-title {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .card-text {
-        font-size: 0.95rem;
-    }
-
-    .nav-link {
-        margin-left: 15px;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 }
