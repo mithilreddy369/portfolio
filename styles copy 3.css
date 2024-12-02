@@ -1,0 +1,289 @@
+/* styles.css */
+
+/* Root Variables for Theme */
+:root {
+    --primary-bg-color: #121212; /* Dark theme background */
+    --secondary-bg-color: #1E1E1E; /* Dark secondary background */
+    --text-color: #EAEAEA; /* Light text for readability */
+    --highlight-color: #FF5E5E;
+    --accent-color: #FFC107;
+    --font-primary: 'Montserrat', 'Open Sans', sans-serif;
+    --font-size-large: 5rem;
+    --font-size-medium: 1.3rem;
+    --font-size-small: 1rem;
+    --social-icon-size: 2.8rem;
+    --btn-font-weight: 600;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.5);
+    --transition-speed: 0.3s;
+    --navbar-bg-color: #1E1E1E; /* Dark navbar background */
+    --navbar-brand-color: #FF5E5E;
+    --link-hover-color: #FFC107;
+}
+
+
+
+
+/* General Settings */
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Entrance Effect for Name */
+@keyframes fadeSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+    color: var(--primary-bg-color);
+    padding: 160px 0;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: var(--font-size-large);
+    font-weight: 800;
+    animation: fadeSlide 1.5s ease-in-out;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    margin-top: 5%;
+}
+
+.hero p {
+    font-size: var(--font-size-medium);
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.hero .social-links a {
+    color: var(--primary-bg-color);
+    font-size: var(--social-icon-size);
+    margin: 0 20px;
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.hero .social-links a:hover {
+    color: var(--highlight-color);
+    transform: scale(1.4);
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--navbar-bg-color);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--navbar-brand-color);
+    text-transform: uppercase;
+    transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
+}
+
+.navbar-brand:hover {
+    color: var(--link-hover-color);
+    text-shadow: 0 0 8px var(--link-hover-color);
+}
+
+.nav-link {
+    color: var(--text-color);
+    margin-left: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-link:hover {
+    color: var(--highlight-color);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
+    color: var(--primary-bg-color);
+    padding: 100px 0;
+}
+
+.hero p {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+}
+
+.hero .social-links a {
+    color: var(--primary-bg-color);
+    font-size: 1.8rem;
+    margin: 0 10px;
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.hero .social-links a:hover {
+    color: var(--highlight-color);
+    transform: scale(1.2);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--highlight-color);
+    text-align: center;
+}
+
+/* About Section */
+#about {
+    background-color: var(--secondary-bg-color);
+    padding: 60px 0;
+}
+
+/* Skills Section */
+#skills {
+    background: var(--primary-bg-color);
+    padding: 60px 0;
+}
+
+#skills .row {
+    margin-top: 20px;
+}
+
+#skills h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+#skills p {
+    color: var(--text-color);
+    font-size: var(--font-size-small);
+}
+
+/* Projects Section */
+#projects .card {
+    background: var(--secondary-bg-color);
+    border: none;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+#projects .card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+.card-title {
+    color: var(--highlight-color);
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: var(--font-size-small);
+}
+
+.btn-custom {
+    background-color: var(--highlight-color);
+    color: var(--primary-bg-color);
+    font-weight: var(--btn-font-weight);
+    border: none;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-bg-color);
+}
+
+/* Certifications Section */
+#certifications ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#certifications ul li {
+    font-size: var(--font-size-small);
+    margin: 10px 0;
+    color: var(--text-color);
+}
+
+#certifications ul li a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+#certifications ul li a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Achievements Section */
+#achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
+#achievements ul li {
+    font-size: var(--font-size-small);
+    margin: 10px 0;
+}
+
+/* Contact Section */
+#contact a {
+    color: var(--highlight-color);
+    text-decoration: none;
+}
+
+#contact a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-color);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
