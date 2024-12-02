@@ -25,6 +25,8 @@ body {
 
 .hero h1 {
     animation: fadeSlide 1.5s ease-in-out;
+    font-size: 4rem; /* Emphasized name size */
+    font-weight: 800;
 }
 
 /* Navigation Bar */
