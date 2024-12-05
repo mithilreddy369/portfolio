@@ -63,7 +63,10 @@ body {
 .hero {
     background: linear-gradient(45deg, #FF5E5E, #FFC107);
     color: #121212;
-    padding: 100px 0;
+    padding-top: 120px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 80px;
 }
 
 .hero p {
