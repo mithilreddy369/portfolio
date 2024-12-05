@@ -1,13 +1,24 @@
 /* styles.css */
 
+/* Root Variables */
+:root {
+    --primary-color: #FF5E5E;
+    --accent-color: #FFC107;
+    --dark-bg: #121212;
+    --dark-secondary-bg: #1E1E1E;
+    --light-text: #EAEAEA;
+    --hover-scale: 1.2;
+    --transition-speed: 0.3s;
+}
+
 /* General Settings */
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Dark theme background */
-    color: #EAEAEA; /* Light text for readability */
-    text-align: center; /* Center align all text */
+    background-color: var(--dark-bg); 
+    color: var(--light-text); 
+    text-align: center; 
     overflow-x: hidden;
 }
 
@@ -25,44 +36,44 @@ body {
 
 .hero h1 {
     animation: fadeSlide 1.5s ease-in-out;
-    font-size: 4rem; /* Emphasized name size */
+    font-size: 4rem; 
     font-weight: 800;
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #1E1E1E; /* Dark navbar background */
+    background-color: var(--dark-secondary-bg);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
     font-weight: 600;
     font-size: 1.5rem;
-    color: #FF5E5E;
+    color: var(--primary-color);
     text-transform: uppercase;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
 }
 
 .navbar-brand:hover {
-    color: #FFC107; /* Highlight color on hover */
-    text-shadow: 0 0 8px #FFC107;
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
 }
 
 .nav-link {
-    color: #EAEAEA;
+    color: var(--light-text);
     margin-left: 15px;
     font-weight: 500;
     text-transform: uppercase;
 }
 
 .nav-link:hover {
-    color: #FF5E5E;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(45deg, #FF5E5E, #FFC107);
-    color: #121212;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    color: var(--dark-bg);
     padding: 80px 0;
     padding-top: 120px;
 }
@@ -73,15 +84,15 @@ body {
 }
 
 .hero .social-links a {
-    color: #121212;
+    color: var(--dark-bg);
     font-size: 1.8rem;
     margin: 0 10px;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .hero .social-links a:hover {
-    color: #FF5E5E;
-    transform: scale(1.2);
+    color: var(--primary-color);
+    transform: scale(var(--hover-scale));
 }
 
 /* Section Titles */
@@ -90,19 +101,19 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #FF5E5E;
+    color: var(--primary-color);
     text-align: center;
 }
 
 /* About Section */
 #about {
-    background-color: #1E1E1E;
+    background-color: var(--dark-secondary-bg);
     padding: 60px 0;
 }
 
 /* Skills Section */
 #skills {
-    background: #121212;
+    background: var(--dark-bg);
     padding: 60px 0;
 }
 
@@ -113,22 +124,22 @@ body {
 #skills h4 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #FFC107;
+    color: var(--accent-color);
 }
 
 #skills p {
-    color: #EAEAEA;
+    color: var(--light-text);
     font-size: 1rem;
 }
 
 /* Projects Section */
 #projects .card {
-    background: #1E1E1E;
+    background: var(--dark-secondary-bg);
     border: none;
-    color: #EAEAEA;
+    color: var(--light-text);
     margin-bottom: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 #projects .card:hover {
@@ -137,7 +148,7 @@ body {
 }
 
 .card-title {
-    color: #FF5E5E;
+    color: var(--primary-color);
     font-size: 1.5rem;
 }
 
@@ -146,16 +157,16 @@ body {
 }
 
 .btn-custom {
-    background-color: #FF5E5E;
-    color: #121212;
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
     font-weight: 600;
     border: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
 .btn-custom:hover {
-    background-color: #FFC107;
-    color: #121212;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
 }
 
 /* Certifications Section */
@@ -167,17 +178,17 @@ body {
 #certifications ul li {
     font-size: 1rem;
     margin: 10px 0;
-    color: #EAEAEA;
+    color: var(--light-text);
 }
 
 #certifications ul li a {
-    color: #FF5E5E;
+    color: var(--primary-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color var(--transition-speed) ease;
 }
 
 #certifications ul li a:hover {
-    color: #FFC107;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
@@ -194,19 +205,19 @@ body {
 
 /* Contact Section */
 #contact a {
-    color: #FF5E5E;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
 #contact a:hover {
-    color: #FFC107;
+    color: var(--accent-color);
     text-decoration: underline;
 }
 
 /* Footer */
 .footer {
-    background-color: #1E1E1E;
-    color: #EAEAEA;
+    background-color: var(--dark-secondary-bg);
+    color: var(--light-text);
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
@@ -237,7 +248,7 @@ body {
 
 /* Education Section */
 #education {
-    background-color: #1E1E1E; /* Dark background */
+    background-color: var(--dark-secondary-bg); 
     padding: 60px 0;
 }
 
@@ -255,7 +266,7 @@ body {
     top: 0;
     bottom: 0;
     width: 4px;
-    background-color: #FF5E5E; /* Vertical line color */
+    background-color: var(--primary-color); 
     transform: translateX(-50%);
 }
 
@@ -272,12 +283,12 @@ body {
 #education .timeline-item .timeline-content {
     position: relative;
     padding: 20px;
-    background-color: #121212; /* Timeline item background */
+    background-color: var(--dark-bg); 
     border-radius: 8px;
     display: inline-block;
     max-width: 80%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
 #education .timeline-item:hover .timeline-content {
@@ -286,7 +297,7 @@ body {
 }
 
 #education .timeline-item h4 {
-    color: #FFC107;
+    color: var(--accent-color);
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 10px;
@@ -294,7 +305,7 @@ body {
 
 #education .timeline-item p {
     font-size: 1rem;
-    color: #EAEAEA;
+    color: var(--light-text);
 }
 
 #education .timeline-item::before {
@@ -303,10 +314,170 @@ body {
     left: 50%;
     width: 20px;
     height: 20px;
-    background-color: #FF5E5E;
-    border: 4px solid #1E1E1E;
+    background-color: var(--primary-color);
+    border: 4px solid var(--dark-secondary-bg);
     border-radius: 50%;
     transform: translate(-50%, 0);
     top: 15px;
     z-index: 2;
+}
+
+/* Certifications Section */
+#certifications {
+    background-color: var(--dark-secondary-bg);
+    color: var(--light-text);
+    padding: 60px 0;
+}
+
+#certifications .section-title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+#certifications .section-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#certifications .certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 15px;
+}
+
+#certifications .certification-card {
+    background: var(--dark-bg);
+    padding: 15px 10px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#certifications .certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: var(--primary-color);
+}
+
+#certifications .certification-card h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#certifications .certification-card p {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+#certifications .certification-card a {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#certifications .certification-card a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Adding small icon for certifications */
+#certifications .certification-card::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#certifications .certification-card:hover::before {
+    background-color: var(--accent-color);
+}
+
+
+/* Key Achievements Section */
+#achievements {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+#achievements .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#achievements ul {
+    font-size: 1.2rem;
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+#contact .section-title {
+    color: var(--primary-color);
+}
+
+#contact .section-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#contact .contact-link {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color var(--transition-speed) ease;
+}
+
+#contact .contact-button {
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed) ease;
+}
+
+#contact .email-button {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+}
+
+#contact .linkedin-button {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    margin-left: 10px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
 }
