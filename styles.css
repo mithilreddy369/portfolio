@@ -11,6 +11,7 @@
     --transition-speed: 0.3s;
 }
 
+
 /* General Settings */
 body {
     font-family: 'Montserrat', 'Open Sans', sans-serif;
@@ -169,82 +170,6 @@ body {
     color: var(--dark-bg);
 }
 
-/* Certifications Section */
-#certifications ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#certifications ul li {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: var(--light-text);
-}
-
-#certifications ul li a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-}
-
-#certifications ul li a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Achievements Section */
-#achievements ul {
-    list-style: none;
-    padding: 0;
-}
-
-#achievements ul li {
-    font-size: 1rem;
-    margin: 10px 0;
-}
-
-/* Contact Section */
-#contact a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--dark-secondary-bg);
-    color: var(--light-text);
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-    }
-}
 
 /* Education Section */
 #education {
@@ -422,6 +347,11 @@ body {
     padding-bottom: 5rem;
 }
 
+#achievements ul {
+    list-style: none;
+    padding: 0;
+}
+
 #achievements .section-title {
     font-size: 2.5rem;
     margin-bottom: 20px;
@@ -480,4 +410,27 @@ body {
     padding: 20px;
     background-color: var(--dark-bg);
     color: var(--light-text);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
 }
