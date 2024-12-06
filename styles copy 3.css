@@ -1,289 +1,99 @@
-/* styles.css */
-
-/* Root Variables for Theme */
+/* Root Variables */
 :root {
-    --primary-bg-color: #121212; /* Dark theme background */
-    --secondary-bg-color: #1E1E1E; /* Dark secondary background */
-    --text-color: #EAEAEA; /* Light text for readability */
-    --highlight-color: #FF5E5E;
+    --primary-color: #FF6F00; /* Deep, rich orange-gold for a bold, radiant primary color */
+    --accent-color: #FFB300; /* Warm, glowing gold for a luxurious accent */
+    --dark-bg: #000000; /* Ultra-black background to allow the gold and orange to pop */
+    --dark-secondary-bg: #121212; /* Soft black with a hint of warmth for secondary sections */
+    --light-text: #F5F5F5; /* Soft off-white for elegant text contrast */
+    --hover-scale: 1.1; /* Subtle yet bold hover effect for a dynamic, polished feel */
+    --transition-speed: 0.3s; /* Smooth transition for sleek interactivity */
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #D4AF37; /* Refined, warm gold for a more elegant, timeless feel */
+    --accent-color: #FF7043; /* Soft yet rich amber-orange for a complementary and sophisticated accent */
+    --dark-bg: #101010; /* Ultra-dark matte black for the ultimate high-contrast, refined background */
+    --dark-secondary-bg: #181818; /* Deep charcoal gray for a softer contrast between sections */
+    --light-text: #F5F5F5; /* Soft light gray text for maximum readability and refinement */
+    --hover-scale: 1.08; /* Subtle hover effect that feels polished and fluid */
+    --transition-speed: 0.5s; /* Smooth, elegant transitions for interactions */
+}
+
+
+/* Root Variables */
+:root {
+    --primary-color: #FF5E5E;
     --accent-color: #FFC107;
-    --font-primary: 'Montserrat', 'Open Sans', sans-serif;
-    --font-size-large: 5rem;
-    --font-size-medium: 1.3rem;
-    --font-size-small: 1rem;
-    --social-icon-size: 2.8rem;
-    --btn-font-weight: 600;
-    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --card-shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.5);
+    --dark-bg: #121212;
+    --dark-secondary-bg: #1E1E1E;
+    --light-text: #EAEAEA;
+    --hover-scale: 1.2;
     --transition-speed: 0.3s;
-    --navbar-bg-color: #1E1E1E; /* Dark navbar background */
-    --navbar-brand-color: #FF5E5E;
-    --link-hover-color: #FFC107;
 }
 
-
-
-
-/* General Settings */
-body {
-    font-family: var(--font-primary);
-    margin: 0;
-    padding: 0;
-    background-color: var(--primary-bg-color);
-    color: var(--text-color);
-    text-align: center;
-    overflow-x: hidden;
+/* Root Variables */
+:root {
+    --primary-color: #3A8DFF; /* Rich, vibrant blue for a professional, futuristic feel */
+    --accent-color: #00D1B2; /* Vibrant teal for an energetic, modern accent */
+    --dark-bg: #0A0A0A; /* Deep black for a sleek, dark background */
+    --dark-secondary-bg: #121212; /* Slightly lighter black to create subtle contrast */
+    --light-text: #F5F5F5; /* Soft white for better readability against dark background */
+    --hover-scale: 1.15; /* Slightly more subtle scaling effect */
+    --transition-speed: 0.3s; /* Smooth transitions */
 }
 
-/* Entrance Effect for Name */
-@keyframes fadeSlide {
-    0% {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Root Variables */
+:root {
+    --primary-color: #00A9E0; /* Electric, high-tech cyan for a futuristic look */
+    --accent-color: #FFD700; /* Gold for a rich, professional accent */
+    --dark-bg: #101010; /* Deep charcoal gray for a sleek, sophisticated background */
+    --dark-secondary-bg: #181818; /* Slightly lighter dark gray for depth */
+    --light-text: #D0D0D0; /* Soft silver for elegant text */
+    --hover-scale: 1.1; /* Subtle scaling for modern interactivity */
+    --transition-speed: 0.25s; /* Smooth but fast transitions for a crisp effect */
 }
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
-    color: var(--primary-bg-color);
-    padding: 160px 0;
-    text-align: center;
-    position: relative;
+/* Root Variables */
+:root {
+    --primary-color: #9B111E; /* A rich maroon for a strong, bold, and professional look */
+    --accent-color: #FFB800; /* A warm, rich gold for a luxurious accent */
+    --dark-bg: #F7F0E1; /* A creamy, off-white background to create a warm and inviting environment */
+    --dark-secondary-bg: #F2D79D; /* A soft golden beige for secondary backgrounds */
+    --light-text: #3E3B31; /* A deep taupe-gray for text, ensuring readability and elegance */
+    --hover-scale: 1.05; /* Subtle hover effect for a more sophisticated interactivity */
+    --transition-speed: 0.25s; /* Smooth and quick transitions to enhance responsiveness */
 }
 
-.hero h1 {
-    font-size: var(--font-size-large);
-    font-weight: 800;
-    animation: fadeSlide 1.5s ease-in-out;
-    margin-bottom: 20px;
-    letter-spacing: 2px;
-    margin-top: 5%;
+/* Root Variables */
+:root {
+    --primary-color: #E100FF; /* Neon violet, deeper and richer for a luxurious feel */
+    --accent-color: #00FFD5; /* Neon aqua, a bright but elegant futuristic accent */
+    --dark-bg: #0D0D0D; /* Ultra-dark background for maximum contrast, highlighting the neon */
+    --dark-secondary-bg: #1B1B1B; /* Deep charcoal gray for secondary elements, adding sophistication */
+    --light-text: #F2F2F2; /* Soft white for text to ensure readability and elegance */
+    --hover-scale: 1.12; /* Slight scaling for a more dynamic yet polished hover effect */
+    --transition-speed: 0.35s; /* Slightly slower transitions for a smoother, more luxurious feel */
 }
 
-.hero p {
-    font-size: var(--font-size-medium);
-    font-weight: 500;
-    margin-top: 20px;
+/* Root Variables */
+:root {
+    --primary-color: #0288D1; /* Deep vibrant blue for a striking, professional primary color */
+    --accent-color: #FF4081; /* Bold neon pink for high-energy accents that pop */
+    --dark-bg: #121212; /* Ultra-dark background for maximum contrast and a sleek look */
+    --dark-secondary-bg: #1C1C1C; /* Dark gray with a hint of warmth for secondary elements */
+    --light-text: #E0E0E0; /* Light gray text for readability while keeping it polished */
+    --hover-scale: 1.2; /* Strong hover effect for impactful user interaction */
+    --transition-speed: 0.4s; /* Slightly slower transition for a more refined experience */
 }
 
-.hero .social-links a {
-    color: var(--primary-bg-color);
-    font-size: var(--social-icon-size);
-    margin: 0 20px;
-    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-.hero .social-links a:hover {
-    color: var(--highlight-color);
-    transform: scale(1.4);
-}
-
-/* Navigation Bar */
-.navbar {
-    background-color: var(--navbar-bg-color);
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: var(--navbar-brand-color);
-    text-transform: uppercase;
-    transition: color var(--transition-speed) ease, text-shadow var(--transition-speed) ease;
-}
-
-.navbar-brand:hover {
-    color: var(--link-hover-color);
-    text-shadow: 0 0 8px var(--link-hover-color);
-}
-
-.nav-link {
-    color: var(--text-color);
-    margin-left: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: var(--highlight-color);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(45deg, var(--highlight-color), var(--accent-color));
-    color: var(--primary-bg-color);
-    padding: 100px 0;
-}
-
-.hero p {
-    font-size: var(--font-size-small);
-    font-weight: 500;
-}
-
-.hero .social-links a {
-    color: var(--primary-bg-color);
-    font-size: 1.8rem;
-    margin: 0 10px;
-    transition: transform var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-.hero .social-links a:hover {
-    color: var(--highlight-color);
-    transform: scale(1.2);
-}
-
-/* Section Titles */
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    color: var(--highlight-color);
-    text-align: center;
-}
-
-/* About Section */
-#about {
-    background-color: var(--secondary-bg-color);
-    padding: 60px 0;
-}
-
-/* Skills Section */
-#skills {
-    background: var(--primary-bg-color);
-    padding: 60px 0;
-}
-
-#skills .row {
-    margin-top: 20px;
-}
-
-#skills h4 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-color);
-}
-
-#skills p {
-    color: var(--text-color);
-    font-size: var(--font-size-small);
-}
-
-/* Projects Section */
-#projects .card {
-    background: var(--secondary-bg-color);
-    border: none;
-    color: var(--text-color);
-    margin-bottom: 30px;
-    box-shadow: var(--card-shadow);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-}
-
-#projects .card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--card-shadow-hover);
-}
-
-.card-title {
-    color: var(--highlight-color);
-    font-size: 1.5rem;
-}
-
-.card-text {
-    font-size: var(--font-size-small);
-}
-
-.btn-custom {
-    background-color: var(--highlight-color);
-    color: var(--primary-bg-color);
-    font-weight: var(--btn-font-weight);
-    border: none;
-    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
-}
-
-.btn-custom:hover {
-    background-color: var(--accent-color);
-    color: var(--primary-bg-color);
-}
-
-/* Certifications Section */
-#certifications ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#certifications ul li {
-    font-size: var(--font-size-small);
-    margin: 10px 0;
-    color: var(--text-color);
-}
-
-#certifications ul li a {
-    color: var(--highlight-color);
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
-}
-
-#certifications ul li a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Achievements Section */
-#achievements ul {
-    list-style: none;
-    padding: 0;
-}
-
-#achievements ul li {
-    font-size: var(--font-size-small);
-    margin: 10px 0;
-}
-
-/* Contact Section */
-#contact a {
-    color: var(--highlight-color);
-    text-decoration: none;
-}
-
-#contact a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
-
-/* Footer */
-.footer {
-    background-color: var(--secondary-bg-color);
-    color: var(--text-color);
-    text-align: center;
-    padding: 15px 0;
-    font-size: 0.9rem;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-    }
+/* Root Variables */
+:root {
+    --primary-color: #3F51B5; /* Rich indigo for a bold, yet calming primary color */
+    --accent-color: #FF9800; /* Warm amber for a bright, energetic accent */
+    --dark-bg: #FFFFFF; /* Clean white background for a bright and open feel */
+    --dark-secondary-bg: #F4F4F4; /* Soft light gray for secondary backgrounds */
+    --light-text: #212121; /* Dark gray text for good readability */
+    --hover-scale: 1.08; /* Subtle hover effect for a polished look */
+    --transition-speed: 0.25s; /* Quick transition speed for smooth UI interactions */
 }
