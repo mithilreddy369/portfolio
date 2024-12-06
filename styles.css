@@ -401,7 +401,6 @@ body {
 #contact .linkedin-button {
     background-color: var(--accent-color);
     color: var(--dark-bg);
-    margin-left: 10px;
 }
 
 /* Footer */
@@ -432,5 +431,8 @@ body {
 
     .card-text {
         font-size: 0.9rem;
+    }
+    #certifications .certification-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
