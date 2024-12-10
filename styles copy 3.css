@@ -9,7 +9,7 @@
     --transition-speed: 0.3s; /* Smooth transition for sleek interactivity */
 }
 
-/* Root Variables */
+/* 2 Root Variables */
 :root {
     --primary-color: #D4AF37; /* Refined, warm gold for a more elegant, timeless feel */
     --accent-color: #FF7043; /* Soft yet rich amber-orange for a complementary and sophisticated accent */
