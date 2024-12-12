@@ -1,4 +1,4 @@
-/* 1 Root Variables */ 
+/* 1- Root Variables */ 
 :root {
     --primary-color: #FF6F00; /* Deep, rich orange-gold for a bold, radiant primary color */
     --accent-color: #FFB300; /* Warm, glowing gold for a luxurious accent */
@@ -9,7 +9,7 @@
     --transition-speed: 0.3s; /* Smooth transition for sleek interactivity */
 }
 
-/* 2 Root Variables */
+/* 2- Root Variables */
 :root {
     --primary-color: #D4AF37; /* Refined, warm gold for a more elegant, timeless feel */
     --accent-color: #FF7043; /* Soft yet rich amber-orange for a complementary and sophisticated accent */
@@ -21,7 +21,7 @@
 }
 
 
-/* Root Variables */
+/* 3- Root Variables */
 :root {
     --primary-color: #FF5E5E;
     --accent-color: #FFC107;
