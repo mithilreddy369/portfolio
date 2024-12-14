@@ -43,7 +43,7 @@
     --transition-speed: 0.3s; /* Smooth transitions */
 }
 
-/* 3 Root Variables */
+/* 5- Root Variables */
 :root {
     --primary-color: #00A9E0; /* Electric, high-tech cyan for a futuristic look */
     --accent-color: #FFD700; /* Gold for a rich, professional accent */
