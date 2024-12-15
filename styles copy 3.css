@@ -54,7 +54,7 @@
     --transition-speed: 0.25s; /* Smooth but fast transitions for a crisp effect */
 }
 
-/* Root Variables */
+/* 6- Root Variables */
 :root {
     --primary-color: #9B111E; /* A rich maroon for a strong, bold, and professional look */
     --accent-color: #FFB800; /* A warm, rich gold for a luxurious accent */
