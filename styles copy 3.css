@@ -65,7 +65,7 @@
     --transition-speed: 0.25s; /* Smooth and quick transitions to enhance responsiveness */
 }
 
-/* Root Variables */
+/* 7- Root Variables */
 :root {
     --primary-color: #E100FF; /* Neon violet, deeper and richer for a luxurious feel */
     --accent-color: #00FFD5; /* Neon aqua, a bright but elegant futuristic accent */
