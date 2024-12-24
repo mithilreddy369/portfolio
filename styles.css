@@ -1,14 +1,14 @@
 /* styles.css */
 
-/* 3- Root Variables */
+/* Root Variables */
 :root {
-    --primary-color: #FF5E5E;
-    --accent-color: #FFC107;
-    --dark-bg: #121212;
-    --dark-secondary-bg: #1E1E1E;
-    --light-text: #EAEAEA;
-    --hover-scale: 1.2;
-    --transition-speed: 0.3s;
+    --primary-color: #FF6F00; /* Deep, rich orange-gold for a bold, radiant primary color */
+    --accent-color: #FFB300; /* Warm, glowing gold for a luxurious accent */
+    --dark-bg: #000000; /* Ultra-black background to allow the gold and orange to pop */
+    --dark-secondary-bg: #121212; /* Soft black with a hint of warmth for secondary sections */
+    --light-text: #F5F5F5; /* Soft off-white for elegant text contrast */
+    --hover-scale: 1.1; /* Subtle yet bold hover effect for a dynamic, polished feel */
+    --transition-speed: 0.3s; /* Smooth transition for sleek interactivity */
 }
 
 /* General Settings */
