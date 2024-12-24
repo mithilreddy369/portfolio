@@ -1,14 +1,14 @@
 /* styles.css */
 
-/* 6- Root Variables */
+/* 3- Root Variables */
 :root {
-    --primary-color: #9B111E; /* A rich maroon for a strong, bold, and professional look */
-    --accent-color: #FFB800; /* A warm, rich gold for a luxurious accent */
-    --dark-bg: #F7F0E1; /* A creamy, off-white background to create a warm and inviting environment */
-    --dark-secondary-bg: #F2D79D; /* A soft golden beige for secondary backgrounds */
-    --light-text: #3E3B31; /* A deep taupe-gray for text, ensuring readability and elegance */
-    --hover-scale: 1.05; /* Subtle hover effect for a more sophisticated interactivity */
-    --transition-speed: 0.25s; /* Smooth and quick transitions to enhance responsiveness */
+    --primary-color: #FF5E5E;
+    --accent-color: #FFC107;
+    --dark-bg: #121212;
+    --dark-secondary-bg: #1E1E1E;
+    --light-text: #EAEAEA;
+    --hover-scale: 1.2;
+    --transition-speed: 0.3s;
 }
 
 /* General Settings */
