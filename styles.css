@@ -1,14 +1,14 @@
 /* styles.css */
 
-/* 4- Root Variables */
+/* 6- Root Variables */
 :root {
-    --primary-color: #3A8DFF; /* Rich, vibrant blue for a professional, futuristic feel */
-    --accent-color: #00D1B2; /* Vibrant teal for an energetic, modern accent */
-    --dark-bg: #0A0A0A; /* Deep black for a sleek, dark background */
-    --dark-secondary-bg: #121212; /* Slightly lighter black to create subtle contrast */
-    --light-text: #F5F5F5; /* Soft white for better readability against dark background */
-    --hover-scale: 1.15; /* Slightly more subtle scaling effect */
-    --transition-speed: 0.3s; /* Smooth transitions */
+    --primary-color: #9B111E; /* A rich maroon for a strong, bold, and professional look */
+    --accent-color: #FFB800; /* A warm, rich gold for a luxurious accent */
+    --dark-bg: #F7F0E1; /* A creamy, off-white background to create a warm and inviting environment */
+    --dark-secondary-bg: #F2D79D; /* A soft golden beige for secondary backgrounds */
+    --light-text: #3E3B31; /* A deep taupe-gray for text, ensuring readability and elegance */
+    --hover-scale: 1.05; /* Subtle hover effect for a more sophisticated interactivity */
+    --transition-speed: 0.25s; /* Smooth and quick transitions to enhance responsiveness */
 }
 
 /* General Settings */
