@@ -151,12 +151,15 @@
             }
         }
 
-        /* No stacking for education table on small screens, use overflow-x-auto instead */
+        /* Stack columns on small screens for education table */
         @media (max-width: 768px) {
+            .education-grid-header, .education-grid-row {
+                grid-template-columns: 1fr; /* Stack columns on small screens */
+            }
             .education-grid-header > div, .education-grid-row > div {
-                text-align: center; /* Keep center alignment for table cells */
-                justify-content: center;
-                padding: 0.5rem;
+                text-align: left; /* Align text left in stacked view */
+                padding-left: 1rem; /* Add some padding */
+                justify-content: flex-start; /* Align left in stacked view */
             }
             .education-grid-header {
                 padding-bottom: 0.5rem;
@@ -165,11 +168,14 @@
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
             }
+            .education-grid-row > div:not(:last-child) {
+                margin-bottom: 0.5rem;
+            }
         }
     </style>
 </head>
 
-<body class="font-inter bg-dark-primary text-text-light antialiased">
+<body class="font-montserrat bg-dark-primary text-text-light antialiased">
     <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-secondary shadow-xl py-5">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a class="text-3xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light" href="#">Mithilesh Reddy</a>
@@ -201,7 +207,7 @@
 
     <section class="min-h-screen flex items-center justify-center text-center bg-dark-primary text-text-light pt-24 pb-12">
         <div class="container mx-auto px-6">
-            <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight animate-fade-in text-accent-teal">MITHILESH REDDY</h1>
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight animate-fade-in text-accent-pink">MITHILESH REDDY</h1>
             <p class="text-xl md:text-2xl font-medium mt-6 animate-slide-in-up animation-delay-300 text-text-light">Full-Stack Developer | Machine Learning Enthusiast | AI Innovator</p>
             <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 mt-10 animate-slide-in-up animation-delay-600">
                 <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-linkedin"></i></a>
