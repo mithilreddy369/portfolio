@@ -151,14 +151,12 @@
             }
         }
 
-        @media (max-width: 768px) { /* Stack columns on small screens */
-            .education-grid-header, .education-grid-row {
-                grid-template-columns: 1fr;
-            }
+        /* No stacking for education table on small screens, use overflow-x-auto instead */
+        @media (max-width: 768px) {
             .education-grid-header > div, .education-grid-row > div {
-                text-align: left; /* Align text left in stacked view */
-                padding-left: 1rem; /* Add some padding */
-                justify-content: flex-start; /* Align left in stacked view */
+                text-align: center; /* Keep center alignment for table cells */
+                justify-content: center;
+                padding: 0.5rem;
             }
             .education-grid-header {
                 padding-bottom: 0.5rem;
@@ -166,9 +164,6 @@
             .education-grid-row {
                 padding-top: 0.5rem;
                 padding-bottom: 0.5rem;
-            }
-            .education-grid-row > div:not(:last-child) {
-                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -208,14 +203,14 @@
         <div class="container mx-auto px-6">
             <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight animate-fade-in text-accent-teal">MITHILESH REDDY</h1>
             <p class="text-xl md:text-2xl font-medium mt-6 animate-slide-in-up animation-delay-300 text-text-light">Full-Stack Developer | Machine Learning Enthusiast | AI Innovator</p>
-            <div class="flex justify-center space-x-8 mt-10 animate-slide-in-up animation-delay-600">
-                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/mithilreddy369" target="_blank" aria-label="GitHub" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-github"></i></a>
-                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" aria-label="HackerRank" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-hackerrank"></i></a>
-                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" aria-label="Kaggle" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-kaggle"></i></a>
-                <a href="https://dev.to/mithilreddy369" target="_blank" aria-label="Dev.to" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-dev"></i></a>
-                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" aria-label="Stack Overflow" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-stack-overflow"></i></a>
-                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" aria-label="Reddit" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300"><i class="fab fa-reddit"></i></a>
+            <div class="flex flex-wrap justify-center space-x-4 md:space-x-8 mt-10 animate-slide-in-up animation-delay-600">
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mithilreddy369" target="_blank" aria-label="GitHub" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-github"></i></a>
+                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" aria-label="HackerRank" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" aria-label="Kaggle" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-kaggle"></i></a>
+                <a href="https://dev.to/mithilreddy369" target="_blank" aria-label="Dev.to" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-dev"></i></a>
+                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" aria-label="Stack Overflow" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" aria-label="Reddit" class="text-text-light text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-reddit"></i></a>
             </div>
         </div>
     </section>
@@ -449,7 +444,7 @@
     <section id="interests" class="py-20 bg-dark-primary">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-extrabold mb-14 text-accent-teal uppercase">Interests</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 justify-items-center">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
                 <div class="interest-card">
                     <i class="fas fa-lightbulb"></i> <h4 class="text-xl font-semibold text-text-light">Exploring Tech</h4>
                 </div>
