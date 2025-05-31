@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mithilesh Reddy - Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* Define custom colors for Tailwind - Ultra Dark Theme with Neon Teal and Pink Accents */
         :root {
-            --color-dark-primary: #0A0A0A; /* Ultra deep black for main background */
-            --color-dark-secondary: #1A1A1A; /* Slightly lighter dark for sections/cards */
-            --color-accent-teal: #66FCF1; /* Vibrant Neon Teal accent */
-            --color-accent-pink: #FF00FF; /* Vibrant Neon Pink accent */
-            --color-text-light: #E0E0E0; /* High contrast soft white for main text */
-            --color-text-muted: #B0B0B0; /* Muted grey for subtle text */
+            --color-dark-primary: #050505; /* Even deeper black for main background */
+            --color-dark-secondary: #121212; /* Slightly lighter dark for sections/cards */
+            --color-accent-teal: #00E6E6; /* Brighter, more electric Neon Teal */
+            --color-accent-pink: #FF00CC; /* Brighter, more electric Neon Pink */
+            --color-text-light: #F0F0F0; /* Brighter soft white for main text */
+            --color-text-muted: #A0A0A0; /* Slightly darker muted grey for subtle text */
         }
 
         /* Custom Tailwind Configuration (for arbitrary values) */
@@ -34,16 +34,28 @@
         /* Custom font for About section */
         .font-playfair-display { font-family: 'Playfair Display', serif; }
         /* Overall premium font */
-        body { font-family: 'Montserrat', sans-serif; }
+        body { font-family: 'Inter', sans-serif; } /* Changed to Inter for a more modern feel */
 
+        /* Global Body Background: Solid ultra-deep black as per screenshot theme */
+        body {
+            background-color: var(--color-dark-primary);
+            color: var(--color-text-light);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Selection styling */
+        ::selection {
+            background-color: var(--color-accent-teal);
+            color: var(--color-dark-primary);
+        }
 
         /* Hover effects using custom colors */
         .hover\:bg-accent-teal:hover { background-color: var(--color-accent-teal); }
         .hover\:text-accent-teal:hover { color: var(--color-accent-teal); }
         .hover\:bg-accent-pink:hover { background-color: var(--color-accent-pink); }
-        .hover\:text-accent-pink:hover { color: var(--color-accent-pink); }
-        .hover\:text-dark-primary:hover { color: var(--color-dark-primary); } /* For buttons changing text color on hover */
-
+        .hover\:text-accent-pink:hover { color: var(--color-dark-primary); } /* For buttons changing text color on hover */
+        .hover\:bg-dark-primary:hover { background-color: var(--color-dark-primary); }
 
         /* Custom bullet points for lists - using Font Awesome checkmark for a professional look */
         .custom-list li {
@@ -61,25 +73,18 @@
             position: absolute;
             left: 0.5em;
             top: 0.2em;
+            transition: transform 0.3s ease-out; /* Smooth transition for hover effect */
         }
 
-        /* Certifications card pseudo-element for a subtle visual cue */
-        .certification-card::before {
-            content: '';
-            position: absolute;
-            top: -12px; /* Position above the card */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 28px; /* Size of the circle */
-            height: 28px;
-            background-color: var(--color-accent-teal); /* Accent color for the circle */
-            border-radius: 50%; /* Make it a circle */
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
-            transition: background-color 0.4s ease; /* Smooth transition on hover */
+        .custom-list li:hover::before {
+            transform: scale(1.2); /* Slightly enlarge on hover */
         }
 
-        .certification-card:hover::before {
-            background-color: var(--color-accent-pink); /* Change color on hover */
+        /* Certifications card styling - REMOVED half-circle pseudo-element */
+        .certification-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 230, 230, 0.1); /* Subtle initial border */
         }
 
         /* Interests card styling */
@@ -93,23 +98,25 @@
             background-color: var(--color-dark-secondary);
             transition: all 0.3s ease-in-out;
             position: relative; /* For potential future icon positioning */
+            border: 2px solid transparent; /* Initial transparent border for smooth transition */
         }
 
         .interest-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
-            border: 2px solid var(--color-accent-teal);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 230, 230, 0.3); /* Enhanced shadow with subtle teal glow */
+            border-color: var(--color-accent-teal); /* Border highlights on hover */
         }
 
         .interest-card i {
             font-size: 3.5rem; /* Larger icon size */
             color: var(--color-accent-teal);
             margin-bottom: 1rem;
-            transition: color 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
         .interest-card:hover i {
             color: var(--color-accent-pink); /* Icon color change on hover */
+            transform: rotateY(15deg) scale(1.1); /* Subtle 3D rotation and scale */
         }
 
         /* Keyframe animations for subtle entry effects */
@@ -123,12 +130,28 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out forwards;
+        /* Initial state for elements that will animate on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
-        .animate-slide-in-up {
-            animation: slideInUp 0.8s ease-out forwards;
+        /* Class added by JS to trigger animation */
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero section specific animations */
+        .hero-title-animation {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        .hero-subtitle-animation {
+            animation: slideInUp 0.8s ease-out forwards 0.3s; /* Added delay */
+        }
+        .hero-social-animation {
+            animation: slideInUp 0.8s ease-out forwards 0.6s; /* Added delay */
         }
 
         /* Responsive adjustments for table-like sections (education, experience) */
@@ -144,7 +167,6 @@
             padding: 0.5rem; /* Reduce padding for tighter spacing */
         }
 
-
         @media (max-width: 1024px) { /* Adjust for medium screens */
             .education-grid-header, .education-grid-row {
                 grid-template-columns: 1.5fr 1.5fr 1fr 1fr; /* Slightly less space for first two */
@@ -155,12 +177,14 @@
         @media (max-width: 768px) {
             .education-grid-header, .education-grid-row {
                 grid-template-columns: 1fr; /* Stack columns on small screens */
+                /* Adjust font size for better readability on small screens */
+                font-size: 0.875rem; /* text-sm */
             }
             .education-grid-header > div, .education-grid-row > div {
                 text-align: left; /* Align text left in stacked view */
                 padding-left: 1rem; /* Add some padding */
                 justify-content: flex-start; /* Align left in stacked view */
-                font-size: 0.875rem; /* text-sm for mobile */
+                font-size: inherit; /* Inherit from parent .education-grid-header/.education-grid-row */
             }
             .education-grid-header {
                 padding-bottom: 0.5rem;
@@ -173,14 +197,130 @@
                 margin-bottom: 0.5rem;
             }
         }
+
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Advanced styling for navigation bar */
+        .navbar-advanced {
+            backdrop-filter: blur(10px); /* Frosted glass effect */
+            background-color: rgba(18, 18, 18, 0.8); /* Semi-transparent background */
+            border-bottom: 1px solid rgba(0, 230, 230, 0.2); /* Subtle teal border */
+        }
+
+        /* Advanced styling for section headings */
+        .section-heading-gradient {
+            background-image: linear-gradient(to right, var(--color-accent-teal), var(--color-accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback for browsers that don't support -webkit-text-fill-color */
+            position: relative;
+            padding-bottom: 1rem; /* Space for the border */
+        }
+
+        .section-heading-gradient::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px; /* Width of the animated border */
+            height: 3px;
+            background-image: linear-gradient(to right, var(--color-accent-teal), var(--color-accent-pink));
+            border-radius: 2px;
+            transition: width 0.3s ease-out;
+        }
+
+        .section-heading-gradient:hover::after {
+            width: 120px; /* Expand border on hover */
+        }
+
+        /* Advanced card styling for skills, projects, certifications */
+        .advanced-card {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 230, 230, 0.1); /* Subtle initial border */
+            /* Removed pseudo-elements for cleaner, sharper look as per screenshot */
+        }
+
+        /* Button hover effects - refined to be less "glowing" and more crisp */
+        .btn-neon-teal:hover {
+            box-shadow: 0 5px 15px rgba(255, 0, 204, 0.2); /* Softer, more diffused shadow */
+            border: 1px solid var(--color-accent-pink); /* Crisp border on hover */
+        }
+
+        .btn-neon-pink:hover {
+            box-shadow: 0 5px 15px rgba(0, 230, 230, 0.2); /* Softer, more diffused shadow */
+            border: 1px solid var(--color-accent-teal); /* Crisp border on hover */
+        }
+
+        /* Social icons hover - removed text-shadow glow */
+        .social-icon-hover:hover {
+            color: var(--color-accent-teal); /* Keep color change */
+            transform: scale(1.25); /* Keep scale effect */
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero section text - removed text-shadow glow */
+        .hero-main-text {
+            /* No text-shadow */
+        }
+
+        .hero-sub-text {
+            /* No text-shadow */
+        }
+
+        /* Particle background for hero section */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        /* Skills card specific styling */
+        .skill-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+            background-color: var(--color-dark-secondary);
+            transition: all 0.3s ease-in-out;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 230, 230, 0.3);
+            border-color: var(--color-accent-teal);
+        }
+
+        .skill-card i {
+            font-size: 3.5rem; /* Consistent icon size with interests */
+            color: var(--color-accent-teal);
+            margin-bottom: 1rem;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .skill-card:hover i {
+            color: var(--color-accent-pink);
+            transform: rotateY(15deg) scale(1.1);
+        }
     </style>
 </head>
 
-<body class="font-montserrat bg-dark-primary text-text-light antialiased">
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-secondary shadow-xl py-5">
+<body class="font-inter bg-dark-primary text-text-light antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 py-5 navbar-advanced">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a class="text-3xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light" href="#">Mithilesh Reddy</a>
-            <button class="lg:hidden text-text-light focus:outline-none" id="navbar-toggle">
+            <a class="text-3xl sm:text-4xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light" href="#">Mithilesh Reddy</a>
+            <button class="lg:hidden text-text-light focus:outline-none" id="navbar-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars text-3xl"></i>
             </button>
             <div class="hidden lg:flex flex-grow justify-end" id="navbar-menu">
@@ -206,54 +346,60 @@
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center justify-center text-center bg-dark-primary text-text-light pt-24 pb-12">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight animate-fade-in text-accent-teal">MITHILESH REDDY</h1>
-            <p class="text-base sm:text-xl md:text-2xl font-medium mt-6 animate-slide-in-up animation-delay-300 text-text-light">Full-Stack Developer | Machine Learning Enthusiast | AI Innovator</p>
-            <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 md:space-x-8 mt-10 animate-slide-in-up animation-delay-600">
-                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/mithilreddy369" target="_blank" aria-label="GitHub" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-github"></i></a>
-                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" aria-label="HackerRank" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-hackerrank"></i></a>
-                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" aria-label="Kaggle" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-kaggle"></i></a>
-                <a href="https://dev.to/mithilreddy369" target="_blank" aria-label="Dev.to" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-dev"></i></a>
-                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" aria-label="Stack Overflow" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-stack-overflow"></i></a>
-                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" aria-label="Reddit" class="text-3xl sm:text-4xl hover:text-accent-teal transform hover:scale-125 transition-all duration-300 p-2"><i class="fab fa-reddit"></i></a>
+    <section class="min-h-screen flex items-center justify-center text-center bg-dark-primary text-text-light pt-24 pb-12 px-4 sm:px-6 relative overflow-hidden">
+        <div id="particles-js"></div> <div class="container mx-auto relative z-10">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight text-accent-teal hero-main-text hero-title-animation">MITHILESH REDDY</h1>
+            <p class="text-base sm:text-xl md:text-2xl font-medium mt-6 text-text-light hero-sub-text hero-subtitle-animation">Full-Stack Developer | Machine Learning Enthusiast | AI Innovator</p>
+            <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 md:space-x-8 mt-10 hero-social-animation">
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/mithilreddy369" target="_blank" aria-label="GitHub" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-github"></i></a>
+                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" aria-label="HackerRank" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-hackerrank"></i></a>
+                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" aria-label="Kaggle" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-kaggle"></i></a>
+                <a href="https://dev.to/mithilreddy369" target="_blank" aria-label="Dev.to" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-dev"></i></a>
+                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" aria-label="Stack Overflow" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-stack-overflow"></i></a>
+                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" aria-label="Reddit" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-reddit"></i></a>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 text-accent-teal uppercase text-center">About Me</h2>
+    <section id="about" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 uppercase text-center section-heading-gradient">About Me</h2>
             <p class="text-base sm:text-lg leading-relaxed max-w-4xl mx-auto text-center text-text-light font-playfair-display">I am a Master of Technology student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.</p>
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-dark-primary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase text-center">Skills</h2>
+    <section id="skills" class="py-20 bg-dark-primary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Skills</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 text-center">
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-code"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Programming Languages</h4>
                     <p class="text-sm sm:text-lg text-text-light">Python, C, JavaScript, Java</p>
                 </div>
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-globe"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Web Development</h4>
-                    <p class="text-sm sm:text-lg text-text-light">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS (for modern responsive styling)</p>
+                    <p class="text-sm sm:text-lg text-text-light">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS</p>
                 </div>
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-database"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Database Management</h4>
                     <p class="text-sm sm:text-lg text-text-light">MySQL, MongoDB</p>
                 </div>
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-cloud"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Cloud Development</h4>
                     <p class="text-sm sm:text-lg text-text-light">AWS, Firebase, EC2, Amplify, S3 buckets, Route 53</p>
                 </div>
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-chart-line"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Data Science & ML</h4>
                     <p class="text-sm sm:text-lg text-text-light">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
                 </div>
-                <div class="p-6 sm:p-8 rounded-2xl shadow-2xl bg-dark-secondary transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300">
+                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                    <i class="fas fa-tools"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Technologies/Tools</h4>
                     <p class="text-sm sm:text-lg text-text-light">Linux, Windows, Jenkins, Git, GitLab, Figma, Unity</p>
                 </div>
@@ -261,49 +407,49 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase text-center">Projects</h2>
+    <section id="projects" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Heart Disease Prediction</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5% and F1-Score of 98.52%.</p>
-                    <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Tic-Tac-Toe Web Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed and deployed a dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
-                    <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Snake Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A classic Snake Game built with HTML, CSS, and JavaScript, tracking score, high score, and games played using localStorage.</p>
-                    <a href="https://github.com/mithilreddy369/snake-game" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Immersive Google Classroom</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Created an interactive VR PPT navigation system with gaze control using Unity and Google Cardboard SDK for enhanced learning.</p>
-                    <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Bank App Python</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Python bank app using OOP concepts like Encapsulation, Inheritance, Abstraction, and Polymorphism for account management.</p>
-                    <a href="https://github.com/mithilreddy369/Bank-App-Python" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300">
+                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Image Steganography</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using password.</p>
-                    <a href="https://github.com/mithilreddy369/Image-Steganography" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink transition-colors duration-300 shadow-md">View on GitHub</a>
+                    <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-dark-primary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase text-center">Experience</h2>
+    <section id="experience" class="py-20 bg-dark-primary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Experience</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300">
+                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
                     <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3">Cyber Security Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">Jan 2025 - Feb 2025 (6-week internship)</p>
@@ -314,7 +460,7 @@
                         <li>Participated in weekly mentor-led sessions and completed assigned tasks and milestones.</li>
                     </ul>
                 </div>
-                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300">
+                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
                     <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3">Foundations of AI Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Microsoft initiative, implemented by Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">April 2025 - May 2025 (4-week internship)</p>
@@ -329,11 +475,11 @@
         </div>
     </section>
 
-    <section id="education" class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase text-center">Education</h2>
-            <div class="overflow-x-auto rounded-2xl shadow-2xl border border-accent-teal">
-                <div class="min-w-full bg-dark-primary rounded-2xl">
+    <section id="education" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Education</h2>
+            <div class="rounded-2xl shadow-2xl border border-accent-teal advanced-card">
+                <div class="bg-dark-primary rounded-2xl">
                     <div class="grid grid-cols-4 gap-4 p-6 bg-dark-secondary rounded-t-2xl border-b border-accent-teal text-accent-teal font-bold text-base sm:text-xl uppercase education-grid-header">
                         <div class="col-span-1">Institution</div>
                         <div class="col-span-1">Qualification</div>
@@ -371,64 +517,75 @@
         </div>
     </section>
 
-    <section id="certifications" class="py-20 bg-dark-primary">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase">Certifications</h2>
+    <section id="certifications" class="py-20 bg-dark-primary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Certifications</h2>
             <p class="text-base sm:text-lg mb-12 max-w-4xl mx-auto text-text-light">
                 Here are some of the certifications I’ve earned to sharpen my skills and expertise:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 justify-items-center">
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Software Engineer Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">SQL (Advanced) Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">JavaScript (Intermediate)</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Python Essentials 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">Cisco</p>
                     <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">ChatGPT Prompt Engineering</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">DeepLearning.AI</p>
                     <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Responsive Web Design</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">freeCodeCamp</p>
                     <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Applied Data Science with Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Data Visualization Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/0c6ff8ad-9285-4790-864b-1f07e17d5c3c" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Data Analysis Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/1b44dc53-139c-4695-ab56-5be1920166c9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Python for Data Science</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/510ad547-6f76-46ea-9e02-e4ed66ff6aa9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal">
+                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                    <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Machine Learning with Python - Level 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/69196b29-ac8d-4ddd-aa0a-be3eafc2f8e2" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
@@ -437,9 +594,9 @@
         </div>
     </section>
 
-    <section id="achievements" class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase text-center">Key Achievements</h2>
+    <section id="achievements" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Key Achievements</h2>
             <ul class="custom-list text-base sm:text-lg leading-relaxed max-w-4xl mx-auto space-y-4">
                 <li>Led a university project team to successful completion, ensuring tasks were completed, deadlines met, and fostering strong team collaboration.</li>
                 <li>Coordinated donations to aid underprivileged groups, creating a positive impact within the community.</li>
@@ -448,60 +605,207 @@
         </div>
     </section>
 
-    <section id="interests" class="py-20 bg-dark-primary">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 text-accent-teal uppercase">Interests</h2>
+    <section id="interests" class="py-20 bg-dark-primary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Interests</h2>
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-8 justify-items-center">
-                <div class="interest-card p-4 sm:p-6">
+                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
                     <i class="fas fa-lightbulb"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Exploring Tech</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6">
+                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
                     <i class="fas fa-shield-alt"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Cybersecurity</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6">
+                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
                     <i class="fas fa-robot"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Automation</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6">
+                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
                     <i class="fas fa-link"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Blockchain</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6">
+                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
                     <i class="fas fa-bitcoin-sign"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Cryptocurrency</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 text-accent-teal">Get in Touch</h2>
+    <section id="contact" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 uppercase text-center section-heading-gradient">Get in Touch</h2>
             <p class="text-base sm:text-lg mb-10 max-w-4xl mx-auto text-text-light">
                 I'm always open to new opportunities and collaborations. Feel free to connect with me!
             </p>
             <div class="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8">
-                <a href="mailto:s.mithilesh.reddi@gmail.com" class="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-accent-teal text-dark-primary font-bold rounded-full text-base sm:text-lg hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-xl transform hover:scale-105">
+                <a href="mailto:s.mithilesh.reddi@gmail.com" class="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-accent-teal text-dark-primary font-bold rounded-full text-base sm:text-lg hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-xl transform hover:scale-105 btn-neon-teal">
                     <i class="fas fa-envelope mr-3 sm:mr-4"></i> Send an Email
                 </a>
-                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-accent-pink text-dark-primary font-bold rounded-full text-base sm:text-lg hover:bg-accent-teal hover:text-dark-primary transition-colors duration-300 shadow-xl transform hover:scale-105">
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="inline-flex items-center px-8 py-4 sm:px-10 sm:py-5 bg-accent-pink text-dark-primary font-bold rounded-full text-base sm:text-lg hover:bg-accent-teal hover:text-dark-primary transition-colors duration-300 shadow-xl transform hover:scale-105 btn-neon-pink">
                     <i class="fab fa-linkedin-in mr-3 sm:mr-4"></i> Visit LinkedIn
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="py-8 bg-dark-primary text-text-muted text-center text-sm sm:text-base">
+    <footer class="py-8 bg-dark-primary text-text-muted text-center text-sm sm:text-base px-4 sm:px-6">
         <p>&copy; 2025 Mithilesh Reddy. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // JavaScript for mobile navigation toggle
-        document.getElementById('navbar-toggle').addEventListener('click', function() {
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbarToggle = document.getElementById('navbar-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
-            mobileMenu.classList.toggle('hidden');
-        });
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobile-menu').classList.add('hidden');
+
+            // Toggle mobile menu visibility
+            navbarToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('#mobile-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Close mobile menu when clicking outside of it
+            document.addEventListener('click', function(event) {
+                if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Intersection Observer for scroll animations
+            const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observerOptions = {
+                root: null, // viewport as the root
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once animated
+                    }
+                });
+            }, observerOptions);
+
+            animateOnScrollElements.forEach(element => {
+                observer.observe(element);
+            });
+
+            // Particles.js initialization
+            particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 80,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": ["#00E6E6", "#FF00CC", "#F0F0F0"] /* Teal, Pink, Light Gray */
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 6, /* Increased particle size */
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 40,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 150,
+                        "color": "#1A1A1A", /* Dark secondary for lines */
+                        "opacity": 0.4,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 140,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 200,
+                            "duration": 0.4
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true
             });
         });
     </script>
