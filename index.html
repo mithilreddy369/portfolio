@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithilesh Reddy - Professional Portfolio</title>
+    <title>Mithilesh Reddy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         /* Define custom colors for Tailwind - Ultra Dark Theme with Neon Teal and Pink Accents */
@@ -31,10 +31,10 @@
         .ring-accent-teal { --tw-ring-color: var(--color-accent-teal); }
         .ring-accent-pink { --tw-ring-color: var(--color-accent-pink); }
 
-        /* Custom font for About section */
-        .font-playfair-display { font-family: 'Playfair Display', serif; }
-        /* Overall premium font */
-        body { font-family: 'Inter', sans-serif; } /* Changed to Inter for a more modern feel */
+        /* Premium font for all headings */
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        /* Overall premium font for body text */
+        body { font-family: 'Inter', sans-serif; }
 
         /* Global Body Background: Solid ultra-deep black as per screenshot theme */
         body {
@@ -103,7 +103,7 @@
 
         .interest-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 230, 230, 0.3); /* Enhanced shadow with subtle teal glow */
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow without glow */
             border-color: var(--color-accent-teal); /* Border highlights on hover */
         }
 
@@ -219,6 +219,8 @@
             color: transparent; /* Fallback for browsers that don't support -webkit-text-fill-color */
             position: relative;
             padding-bottom: 1rem; /* Space for the border */
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat to headings */
+            letter-spacing: 0.05em; /* Add subtle letter spacing for elegance */
         }
 
         .section-heading-gradient::after {
@@ -248,12 +250,12 @@
 
         /* Button hover effects - refined to be less "glowing" and more crisp */
         .btn-neon-teal:hover {
-            box-shadow: 0 5px 15px rgba(255, 0, 204, 0.2); /* Softer, more diffused shadow */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer, more diffused shadow */
             border: 1px solid var(--color-accent-pink); /* Crisp border on hover */
         }
 
         .btn-neon-pink:hover {
-            box-shadow: 0 5px 15px rgba(0, 230, 230, 0.2); /* Softer, more diffused shadow */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer, more diffused shadow */
             border: 1px solid var(--color-accent-teal); /* Crisp border on hover */
         }
 
@@ -298,7 +300,7 @@
 
         .skill-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 230, 230, 0.3);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); /* No glow */
             border-color: var(--color-accent-teal);
         }
 
@@ -319,7 +321,7 @@
 <body class="font-inter bg-dark-primary text-text-light antialiased">
     <nav class="fixed top-0 left-0 right-0 z-50 py-5 navbar-advanced">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <a class="text-3xl sm:text-4xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light" href="#">Mithilesh Reddy</a>
+            <a class="text-3xl sm:text-4xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light font-montserrat" href="#">Mithilesh Reddy</a>
             <button class="lg:hidden text-text-light focus:outline-none" id="navbar-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars text-3xl"></i>
             </button>
@@ -347,8 +349,9 @@
     </nav>
 
     <section class="min-h-screen flex items-center justify-center text-center bg-dark-primary text-text-light pt-24 pb-12 px-4 sm:px-6 relative overflow-hidden">
-        <div id="particles-js"></div> <div class="container mx-auto relative z-10">
-            <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight text-accent-teal hero-main-text hero-title-animation">MITHILESH REDDY</h1>
+        <div id="particles-js"></div>
+        <div class="container mx-auto relative z-10">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold leading-tight text-accent-teal hero-main-text hero-title-animation font-montserrat">MITHILESH REDDY</h1>
             <p class="text-base sm:text-xl md:text-2xl font-medium mt-6 text-text-light hero-sub-text hero-subtitle-animation">Full-Stack Developer | Machine Learning Enthusiast | AI Innovator</p>
             <div class="flex flex-wrap justify-center space-x-2 sm:space-x-4 md:space-x-8 mt-10 hero-social-animation">
                 <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" aria-label="LinkedIn" class="text-3xl sm:text-4xl transform hover:scale-125 transition-all duration-300 p-2 social-icon-hover"><i class="fab fa-linkedin"></i></a>
@@ -365,7 +368,7 @@
     <section id="about" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 uppercase text-center section-heading-gradient">About Me</h2>
-            <p class="text-base sm:text-lg leading-relaxed max-w-4xl mx-auto text-center text-text-light font-playfair-display">I am a Master of Technology student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.</p>
+            <p class="text-base sm:text-lg leading-relaxed max-w-4xl mx-auto text-center text-text-light">I am a Master of Technology student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.</p>
         </div>
     </section>
 
@@ -375,32 +378,32 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 text-center">
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-code"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Programming Languages</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Programming Languages</h4>
                     <p class="text-sm sm:text-lg text-text-light">Python, C, JavaScript, Java</p>
                 </div>
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-globe"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Web Development</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Web Development</h4>
                     <p class="text-sm sm:text-lg text-text-light">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS</p>
                 </div>
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-database"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Database Management</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Database Management</h4>
                     <p class="text-sm sm:text-lg text-text-light">MySQL, MongoDB</p>
                 </div>
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-cloud"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Cloud Development</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Cloud Development</h4>
                     <p class="text-sm sm:text-lg text-text-light">AWS, Firebase, EC2, Amplify, S3 buckets, Route 53</p>
                 </div>
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-chart-line"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Data Science & ML</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Data Science & ML</h4>
                     <p class="text-sm sm:text-lg text-text-light">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
                 </div>
                 <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
                     <i class="fas fa-tools"></i>
-                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3">Technologies/Tools</h4>
+                    <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Technologies/Tools</h4>
                     <p class="text-sm sm:text-lg text-text-light">Linux, Windows, Jenkins, Git, GitLab, Figma, Unity</p>
                 </div>
             </div>
@@ -412,32 +415,32 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Heart Disease Prediction</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Heart Disease Prediction</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5% and F1-Score of 98.52%.</p>
                     <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Tic-Tac-Toe Web Game</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Tic-Tac-Toe Web Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed and deployed a dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
                     <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Snake Game</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Snake Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A classic Snake Game built with HTML, CSS, and JavaScript, tracking score, high score, and games played using localStorage.</p>
                     <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Immersive Google Classroom</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Immersive Google Classroom</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Created an interactive VR PPT navigation system with gaze control using Unity and Google Cardboard SDK for enhanced learning.</p>
                     <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Bank App Python</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Bank App Python</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Python bank app using OOP concepts like Encapsulation, Inheritance, Abstraction, and Polymorphism for account management.</p>
                     <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
                 <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
-                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4">Image Steganography</h5>
+                    <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Image Steganography</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using password.</p>
                     <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
@@ -450,7 +453,7 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Experience</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3">Cyber Security Internship</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3 font-montserrat">Cyber Security Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">Jan 2025 - Feb 2025 (6-week internship)</p>
                     <ul class="custom-list text-sm sm:text-base text-text-light space-y-2">
@@ -461,7 +464,7 @@
                     </ul>
                 </div>
                 <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
-                    <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3">Foundations of AI Internship</h3>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3 font-montserrat">Foundations of AI Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Microsoft initiative, implemented by Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">April 2025 - May 2025 (4-week internship)</p>
                     <ul class="custom-list text-sm sm:text-base text-text-light space-y-2">
@@ -526,67 +529,67 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 justify-items-center">
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Software Engineer Certificate</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Software Engineer Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">SQL (Advanced) Certificate</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">SQL (Advanced) Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">JavaScript (Intermediate)</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">JavaScript (Intermediate)</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Python Essentials 1</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Python Essentials 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">Cisco</p>
                     <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">ChatGPT Prompt Engineering</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">ChatGPT Prompt Engineering</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">DeepLearning.AI</p>
                     <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Responsive Web Design</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Responsive Web Design</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">freeCodeCamp</p>
                     <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Applied Data Science with Python</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Applied Data Science with Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Data Visualization Using Python</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Data Visualization Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/0c6ff8ad-9285-4790-864b-1f07e17d5c3c" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Data Analysis Using Python</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Data Analysis Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/1b44dc53-139c-4695-ab56-5be1920166c9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Python for Data Science</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Python for Data Science</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/510ad547-6f76-46ea-9e02-e4ed66ff6aa9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
                 <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
-                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3">Machine Learning with Python - Level 1</h4>
+                    <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Machine Learning with Python - Level 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/69196b29-ac8d-4ddd-aa0a-be3eafc2f8e2" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
@@ -610,19 +613,19 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Interests</h2>
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-8 justify-items-center">
                 <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
-                    <i class="fas fa-lightbulb"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Exploring Tech</h4>
+                    <i class="fas fa-lightbulb"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Exploring Tech</h4>
                 </div>
                 <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
-                    <i class="fas fa-shield-alt"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Cybersecurity</h4>
+                    <i class="fas fa-shield-alt"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Cybersecurity</h4>
                 </div>
                 <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
-                    <i class="fas fa-robot"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Automation</h4>
+                    <i class="fas fa-robot"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Automation</h4>
                 </div>
                 <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
-                    <i class="fas fa-link"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Blockchain</h4>
+                    <i class="fas fa-link"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Blockchain</h4>
                 </div>
                 <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
-                    <i class="fas fa-bitcoin-sign"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light">Cryptocurrency</h4>
+                    <i class="fas fa-bitcoin-sign"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Cryptocurrency</h4>
                 </div>
             </div>
         </div>
@@ -655,19 +658,19 @@
             const navbarToggle = document.getElementById('navbar-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
-            // Toggle mobile menu visibility
+            // Function to toggle mobile menu visibility
             navbarToggle.addEventListener('click', function() {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // Close mobile menu when a link is clicked
+            // Function to close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
                 });
             });
 
-            // Close mobile menu when clicking outside of it
+            // Function to close mobile menu when clicking outside of it
             document.addEventListener('click', function(event) {
                 if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
@@ -692,6 +695,7 @@
                 });
             }, observerOptions);
 
+            // Observe each element that should animate on scroll
             animateOnScrollElements.forEach(element => {
                 observer.observe(element);
             });
@@ -719,7 +723,7 @@
                             "nb_sides": 5
                         },
                         "image": {
-                            "src": "img/github.svg",
+                            "src": "img/github.svg", /* Placeholder, not actually used for visual */
                             "width": 100,
                             "height": 100
                         }
