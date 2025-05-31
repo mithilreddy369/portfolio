@@ -413,19 +413,6 @@
             background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
             background-size: 20px 20px;
         }
-
-        /* Mobile menu transition */
-        #mobile-menu {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-        }
-
-        #mobile-menu.open {
-            max-height: 500px; /* Sufficiently large height */
-            opacity: 1;
-        }
     </style>
 </head>
 
@@ -450,7 +437,7 @@
             </div>
         </div>
         
-        <div class="lg:hidden hidden bg-dark-secondary w-full py-4 shadow-inner" id="mobile-menu">
+        <div class="lg:hidden max-h-0 opacity-0 overflow-hidden bg-dark-secondary w-full py-4 shadow-inner transition-all duration-500 ease-in-out" id="mobile-menu">
             <ul class="flex flex-col items-center space-y-4">
                 <li><a class="block py-2 text-text-light text-lg font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#about">About</a></li>
                 <li><a class="block py-2 text-text-light text-lg font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#skills">Skills</a></li>
@@ -798,22 +785,31 @@
             const navLinks = document.querySelectorAll('.navbar-advanced a.nav-link-hover');
             const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
 
-            // Function to toggle mobile menu visibility
+            // Function to toggle mobile menu visibility using Tailwind classes
             navbarToggle.addEventListener('click', function() {
-                mobileMenu.classList.toggle('open'); // Use 'open' class for transition
+                mobileMenu.classList.toggle('max-h-0');
+                mobileMenu.classList.toggle('opacity-0');
+                mobileMenu.classList.toggle('max-h-screen');
+                mobileMenu.classList.toggle('opacity-100');
             });
 
             // Function to close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('open'); // Close using 'open' class
+                    mobileMenu.classList.remove('max-h-screen');
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('max-h-0');
+                    mobileMenu.classList.add('opacity-0');
                 });
             });
 
             // Function to close mobile menu when clicking outside of it
             document.addEventListener('click', function(event) {
-                if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && mobileMenu.classList.contains('open')) {
-                    mobileMenu.classList.remove('open');
+                if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && mobileMenu.classList.contains('max-h-screen')) {
+                    mobileMenu.classList.remove('max-h-screen');
+                    mobileMenu.classList.remove('opacity-100');
+                    mobileMenu.classList.add('max-h-0');
+                    mobileMenu.classList.add('opacity-0');
                 }
             });
 
