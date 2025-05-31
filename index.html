@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithilesh Reddy - Professional Portfolio</title>
+    <title>Mithilesh Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -169,6 +169,11 @@
             /* Added margin-bottom for stacked table items for better separation */
             .education-grid-row > div:not(:last-child) {
                 margin-bottom: 0.75rem; /* Increased space between stacked items */
+            }
+            /* Ensure table headers are bold and clear on mobile */
+            .education-grid-header > div {
+                font-weight: bold; /* Make headers bold */
+                color: var(--color-accent-teal); /* Keep accent color for headers */
             }
         }
 
@@ -420,7 +425,7 @@
 <body class="font-inter bg-dark-primary text-text-light antialiased">
     <div id="scroll-progress-bar" class="fixed top-0 left-0 w-0 h-1 bg-gradient-to-r from-accent-teal to-accent-pink z-[9999]"></div>
 
-    <nav class="fixed top-0 left-0 right-0 z-50 py-3 navbar-advanced"> <div class="container mx-auto px-6 flex justify-between items-center">
+    <nav class="fixed top-0 left-0 right-0 z-50 py-2 navbar-advanced"> <div class="container mx-auto px-6 flex justify-between items-center">
             <a class="text-3xl sm:text-4xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light font-montserrat" href="#">Mithilesh Reddy</a>
             <button class="lg:hidden text-text-light focus:outline-none" id="navbar-toggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars text-3xl"></i>
@@ -437,7 +442,7 @@
             </div>
         </div>
         
-        <div class="lg:hidden max-h-0 opacity-0 overflow-hidden bg-dark-secondary w-full py-2 shadow-inner transition-all duration-500 ease-in-out" id="mobile-menu"> <ul class="flex flex-col items-center space-y-4">
+        <div class="lg:hidden max-h-0 opacity-0 overflow-hidden bg-dark-secondary w-full py-1 shadow-inner transition-all duration-500 ease-in-out" id="mobile-menu"> <ul class="flex flex-col items-center space-y-4">
                 <li><a class="block py-2 text-text-light text-lg font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#about">About</a></li>
                 <li><a class="block py-2 text-text-light text-lg font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#skills">Skills</a></li>
                 <li><a class="block py-2 text-text-light text-lg font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#projects">Projects</a></li>
@@ -590,7 +595,7 @@
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Education</h2>
             <div class="rounded-2xl shadow-2xl border border-accent-teal">
                 <div class="bg-dark-primary rounded-2xl">
-                    <div class="grid grid-cols-4 gap-4 p-6 bg-dark-secondary rounded-t-2xl border-b border-accent-teal text-accent-teal font-bold text-base sm:text-xl uppercase education-grid-header">
+                    <div class="grid grid-cols-4 gap-4 p-6 bg-dark-secondary rounded-t-2xl border-b border-accent-teal font-bold text-base sm:text-xl uppercase education-grid-header">
                         <div class="col-span-1">Institution</div>
                         <div class="col-span-1">Qualification</div>
                         <div class="col-span-1">Year</div>
