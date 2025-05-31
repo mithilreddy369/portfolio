@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithilesh Reddy</title>
+    <title>Mithilesh Reddy - Professional Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -80,78 +80,51 @@
             transform: scale(1.2); /* Slightly enlarge on hover */
         }
 
-        /* Certifications card styling - REMOVED half-circle pseudo-element */
-        .certification-card {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(0, 230, 230, 0.1); /* Subtle initial border */
-        }
-
-        /* Interests card styling */
-        .interest-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-            background-color: var(--color-dark-secondary);
-            transition: all 0.3s ease-in-out;
-            position: relative; /* For potential future icon positioning */
-            border: 2px solid transparent; /* Initial transparent border for smooth transition */
-        }
-
-        .interest-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); /* Enhanced shadow without glow */
-            border-color: var(--color-accent-teal); /* Border highlights on hover */
-        }
-
-        .interest-card i {
-            font-size: 3.5rem; /* Larger icon size */
-            color: var(--color-accent-teal);
-            margin-bottom: 1rem;
-            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-
-        .interest-card:hover i {
-            color: var(--color-accent-pink); /* Icon color change on hover */
-            transform: rotateY(15deg) scale(1.1); /* Subtle 3D rotation and scale */
-        }
-
         /* Keyframe animations for subtle entry effects */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
-        @keyframes slideInUp {
-            from { opacity: 0; transform: translateY(30px); }
+        /* New keyframe for staggered content */
+        @keyframes staggeredFadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Initial state for elements that will animate on scroll */
+        /* Only fade-in animation remains for sections */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 0.8s ease-out; /* Only opacity transition */
         }
 
         /* Class added by JS to trigger animation */
         .animate-on-scroll.is-visible {
             opacity: 1;
+        }
+
+        /* Base style for staggered items */
+        .staggered-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* Class added by JS to trigger staggered animation */
+        .staggered-item.is-visible {
+            opacity: 1;
             transform: translateY(0);
         }
 
-        /* Hero section specific animations */
+        /* Hero section specific animations (kept as they are subtle entrance, not "sliding" across sections) */
         .hero-title-animation {
             animation: fadeIn 1s ease-out forwards;
         }
         .hero-subtitle-animation {
-            animation: slideInUp 0.8s ease-out forwards 0.3s; /* Added delay */
+            animation: fadeIn 0.8s ease-out forwards 0.3s; /* Changed to fadeIn */
         }
         .hero-social-animation {
-            animation: slideInUp 0.8s ease-out forwards 0.6s; /* Added delay */
+            animation: fadeIn 0.8s ease-out forwards 0.6s; /* Changed to fadeIn */
         }
 
         /* Responsive adjustments for table-like sections (education, experience) */
@@ -208,7 +181,37 @@
             backdrop-filter: blur(10px); /* Frosted glass effect */
             background-color: rgba(18, 18, 18, 0.8); /* Semi-transparent background */
             border-bottom: 1px solid rgba(0, 230, 230, 0.2); /* Subtle teal border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
         }
+
+        /* Navigation link hover effect */
+        .nav-link-hover {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+        .nav-link-hover:hover {
+            transform: translateY(-3px); /* Slight lift */
+            color: var(--color-accent-teal);
+        }
+        .nav-link-hover::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--color-accent-pink);
+            transition: width 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* More fluid transition */
+        }
+        .nav-link-hover:hover::after,
+        .nav-link-hover.active::after {
+            width: 100%;
+        }
+        .nav-link-hover.active {
+            color: var(--color-accent-teal);
+        }
+
 
         /* Advanced styling for section headings */
         .section-heading-gradient {
@@ -233,40 +236,75 @@
             height: 3px;
             background-image: linear-gradient(to right, var(--color-accent-teal), var(--color-accent-pink));
             border-radius: 2px;
-            transition: width 0.3s ease-out;
+            transition: width 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* More fluid transition */
         }
 
         .section-heading-gradient:hover::after {
             width: 120px; /* Expand border on hover */
         }
 
-        /* Advanced card styling for skills, projects, certifications */
+        /* Advanced card styling for skills, projects, certifications, interests */
         .advanced-card {
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(0, 230, 230, 0.1); /* Subtle initial border */
-            /* Removed pseudo-elements for cleaner, sharper look as per screenshot */
+            border-radius: 1rem; /* Consistent border radius */
+            z-index: 1; /* Ensure pseudo-element is behind content */
+            background-color: var(--color-dark-secondary); /* Default background for cards */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
+            transition: all 0.3s ease-in-out; /* Smooth transition for all properties */
+        }
+
+        .advanced-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 1rem; /* Match card border-radius */
+            padding: 2px; /* Thickness of the animated border */
+            background: linear-gradient(45deg, var(--color-accent-teal), var(--color-accent-pink));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 0;
+            transform: scale(0.98); /* Slightly smaller initially */
+            z-index: -1; /* Place behind content */
+        }
+
+        .advanced-card:hover {
+            transform: translateY(-12px) scale(1.04); /* Even more pronounced lift and enlarge */
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6); /* Deeper, wider shadow on hover */
+        }
+
+        .advanced-card:hover::before {
+            opacity: 1;
+            transform: scale(1);
         }
 
         /* Button hover effects - refined to be less "glowing" and more crisp */
         .btn-neon-teal:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer, more diffused shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
             border: 1px solid var(--color-accent-pink); /* Crisp border on hover */
+            transform: translateY(-3px); /* Subtle lift on hover */
         }
 
         .btn-neon-pink:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer, more diffused shadow */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
             border: 1px solid var(--color-accent-teal); /* Crisp border on hover */
+            transform: translateY(-3px); /* Subtle lift on hover */
         }
 
-        /* Social icons hover - removed text-shadow glow */
+        /* Social icons hover */
         .social-icon-hover:hover {
             color: var(--color-accent-teal); /* Keep color change */
             transform: scale(1.25); /* Keep scale effect */
             transition: all 0.3s ease-in-out;
         }
 
-        /* Hero section text - removed text-shadow glow */
+        /* Hero section text */
         .hero-main-text {
             /* No text-shadow */
         }
@@ -285,23 +323,13 @@
             z-index: 0;
         }
 
-        /* Skills card specific styling */
+        /* Skill card specific styling (inherits from advanced-card) */
         .skill-card {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-            background-color: var(--color-dark-secondary);
-            transition: all 0.3s ease-in-out;
-            border: 2px solid transparent;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5); /* No glow */
-            border-color: var(--color-accent-teal);
+            /* Using advanced-card for shadow and transition */
         }
 
         .skill-card i {
@@ -315,10 +343,95 @@
             color: var(--color-accent-pink);
             transform: rotateY(15deg) scale(1.1);
         }
+
+        /* Project card specific styling (inherits from advanced-card) */
+        .project-card {
+            padding: 2rem; /* Added padding for consistency */
+            background-color: var(--color-dark-primary); /* Override default advanced-card background */
+            /* Using advanced-card for shadow and transition */
+        }
+
+        /* Interests card styling - Increased Size */
+        .interest-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 2rem; /* Increased vertical padding */
+            /* Using advanced-card for border-radius, shadow, and transition */
+            min-width: 180px; /* Ensure a minimum width */
+            min-height: 180px; /* Ensure a minimum height */
+            justify-content: center; /* Center content vertically */
+        }
+
+        .interest-card i {
+            font-size: 4rem; /* Larger icon size for bigger card */
+            color: var(--color-accent-teal);
+            margin-bottom: 1.5rem; /* Increased margin */
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .interest-card:hover i {
+            color: var(--color-accent-pink); /* Icon color change on hover */
+            transform: rotateY(15deg) scale(1.1); /* Subtle 3D rotation and scale */
+        }
+
+
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--color-accent-pink);
+            color: var(--color-dark-primary);
+            padding: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #back-to-top:hover {
+            background-color: var(--color-accent-teal);
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Subtle background pattern */
+        .section-bg-pattern {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+            background-size: 20px 20px;
+        }
+
+        /* Mobile menu transition */
+        #mobile-menu {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        #mobile-menu.open {
+            max-height: 500px; /* Sufficiently large height */
+            opacity: 1;
+        }
     </style>
 </head>
 
 <body class="font-inter bg-dark-primary text-text-light antialiased">
+    <div id="scroll-progress-bar" class="fixed top-0 left-0 w-0 h-1 bg-gradient-to-r from-accent-teal to-accent-pink z-[9999]"></div>
+
     <nav class="fixed top-0 left-0 right-0 z-50 py-5 navbar-advanced">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <a class="text-3xl sm:text-4xl font-extrabold uppercase text-accent-pink transition-colors duration-300 hover:text-text-light font-montserrat" href="#">Mithilesh Reddy</a>
@@ -327,12 +440,12 @@
             </button>
             <div class="hidden lg:flex flex-grow justify-end" id="navbar-menu">
                 <ul class="flex space-x-8">
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#about">About</a></li>
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#skills">Skills</a></li>
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#projects">Projects</a></li>
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#experience">Experience</a></li>
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#education">Education</a></li>
-                    <li><a class="text-text-light text-xl font-medium uppercase hover:text-accent-teal transition-colors duration-300" href="#contact">Contact</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#about">About</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#skills">Skills</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#projects">Projects</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#experience">Experience</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#education">Education</a></li>
+                    <li><a class="text-text-light text-xl font-medium uppercase nav-link-hover" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -365,10 +478,10 @@
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+    <section id="about" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll section-bg-pattern">
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-10 uppercase text-center section-heading-gradient">About Me</h2>
-            <p class="text-base sm:text-lg leading-relaxed max-w-4xl mx-auto text-center text-text-light">I am a Master of Technology student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.</p>
+            <p class="text-base sm:text-lg leading-relaxed max-w-4xl mx-auto text-center text-text-light staggered-item">I am a Master of Technology student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.</p>
         </div>
     </section>
 
@@ -376,32 +489,32 @@
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Skills</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 text-center">
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-code"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Programming Languages</h4>
                     <p class="text-sm sm:text-lg text-text-light">Python, C, JavaScript, Java</p>
                 </div>
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-globe"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Web Development</h4>
                     <p class="text-sm sm:text-lg text-text-light">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS</p>
                 </div>
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-database"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Database Management</h4>
                     <p class="text-sm sm:text-lg text-text-light">MySQL, MongoDB</p>
                 </div>
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-cloud"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Cloud Development</h4>
                     <p class="text-sm sm:text-lg text-text-light">AWS, Firebase, EC2, Amplify, S3 buckets, Route 53</p>
                 </div>
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-chart-line"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Data Science & ML</h4>
                     <p class="text-sm sm:text-lg text-text-light">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
                 </div>
-                <div class="skill-card p-6 sm:p-8 rounded-2xl shadow-2xl transition-all transform hover:scale-105 hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="skill-card p-6 sm:p-8 advanced-card">
                     <i class="fas fa-tools"></i>
                     <h4 class="text-xl sm:text-2xl font-bold text-accent-teal mb-3 font-montserrat">Technologies/Tools</h4>
                     <p class="text-sm sm:text-lg text-text-light">Linux, Windows, Jenkins, Git, GitLab, Figma, Unity</p>
@@ -410,36 +523,36 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+    <section id="projects" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll section-bg-pattern">
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Heart Disease Prediction</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5% and F1-Score of 98.52%.</p>
                     <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Tic-Tac-Toe Web Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed and deployed a dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
                     <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Snake Game</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A classic Snake Game built with HTML, CSS, and JavaScript, tracking score, high score, and games played using localStorage.</p>
                     <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Immersive Google Classroom</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Created an interactive VR PPT navigation system with gaze control using Unity and Google Cardboard SDK for enhanced learning.</p>
                     <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Bank App Python</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">A Python bank app using OOP concepts like Encapsulation, Inheritance, Abstraction, and Polymorphism for account management.</p>
                     <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
                 </div>
-                <div class="p-6 rounded-2xl shadow-2xl bg-dark-primary transition-all transform hover:translate-y-[-8px] hover:shadow-3xl hover:ring-2 ring-accent-teal duration-300 advanced-card">
+                <div class="project-card p-6 advanced-card">
                     <h5 class="text-xl sm:text-2xl font-bold text-accent-teal mb-4 font-montserrat">Image Steganography</h5>
                     <p class="text-sm sm:text-base text-text-light mb-6">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using password.</p>
                     <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-block px-6 py-3 bg-accent-teal text-dark-primary font-semibold rounded-full text-sm sm:text-base hover:bg-accent-pink hover:text-dark-primary transition-colors duration-300 shadow-md btn-neon-teal">View on GitHub</a>
@@ -452,7 +565,7 @@
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Experience</h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
+                <div class="p-8 advanced-card">
                     <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3 font-montserrat">Cyber Security Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">Jan 2025 - Feb 2025 (6-week internship)</p>
@@ -463,7 +576,7 @@
                         <li>Participated in weekly mentor-led sessions and completed assigned tasks and milestones.</li>
                     </ul>
                 </div>
-                <div class="p-8 rounded-2xl shadow-2xl bg-dark-secondary border border-accent-teal transition-all transform hover:scale-105 hover:shadow-3xl duration-300 advanced-card">
+                <div class="p-8 advanced-card">
                     <h3 class="text-2xl sm:text-3xl font-bold text-accent-teal mb-3 font-montserrat">Foundations of AI Internship</h3>
                     <p class="text-base sm:text-lg text-text-muted mb-2">Microsoft initiative, implemented by Edunet Foundation (AICTE Collaboration)</p>
                     <p class="text-base sm:text-lg text-text-light mb-4">April 2025 - May 2025 (4-week internship)</p>
@@ -478,10 +591,10 @@
         </div>
     </section>
 
-    <section id="education" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+    <section id="education" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll section-bg-pattern">
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Education</h2>
-            <div class="rounded-2xl shadow-2xl border border-accent-teal advanced-card">
+            <div class="rounded-2xl shadow-2xl border border-accent-teal">
                 <div class="bg-dark-primary rounded-2xl">
                     <div class="grid grid-cols-4 gap-4 p-6 bg-dark-secondary rounded-t-2xl border-b border-accent-teal text-accent-teal font-bold text-base sm:text-xl uppercase education-grid-header">
                         <div class="col-span-1">Institution</div>
@@ -527,67 +640,67 @@
                 Here are some of the certifications I’ve earned to sharpen my skills and expertise:
             </p>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8 justify-items-center">
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Software Engineer Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">SQL (Advanced) Certificate</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">JavaScript (Intermediate)</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">HackerRank</p>
                     <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Python Essentials 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">Cisco</p>
                     <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">ChatGPT Prompt Engineering</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">DeepLearning.AI</p>
                     <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Responsive Web Design</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">freeCodeCamp</p>
                     <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Applied Data Science with Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Data Visualization Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/0c6ff8ad-9285-4790-864b-1f07e17d5c3c" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Data Analysis Using Python</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/1b44dc53-139c-4695-ab56-5be1920166c9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Python for Data Science</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
                     <a href="https://www.credly.com/badges/510ad547-6f76-46ea-9e02-e4ed66ff6aa9" target="_blank" class="inline-block text-accent-teal text-sm sm:text-base font-medium hover:text-text-light hover:underline transition-colors duration-300">View Certificate →</a>
                 </div>
-                <div class="certification-card p-4 sm:p-6 rounded-2xl bg-dark-secondary shadow-2xl w-full transition-all duration-300 hover:scale-105 hover:ring-2 ring-accent-teal relative advanced-card">
+                <div class="certification-card p-4 sm:p-6 w-full advanced-card">
                     <i class="fas fa-award text-accent-pink text-4xl mb-4"></i>
                     <h4 class="text-xl sm:text-2xl font-semibold text-accent-teal mb-3 font-montserrat">Machine Learning with Python - Level 1</h4>
                     <p class="text-sm sm:text-base text-text-muted mb-4">IBM</p>
@@ -597,7 +710,7 @@
         </div>
     </section>
 
-    <section id="achievements" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+    <section id="achievements" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll section-bg-pattern">
         <div class="container mx-auto">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Key Achievements</h2>
             <ul class="custom-list text-base sm:text-lg leading-relaxed max-w-4xl mx-auto space-y-4">
@@ -612,26 +725,26 @@
         <div class="container mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-14 uppercase text-center section-heading-gradient">Interests</h2>
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-8 justify-items-center">
-                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
+                <div class="interest-card p-4 sm:p-6 advanced-card">
                     <i class="fas fa-lightbulb"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Exploring Tech</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
+                <div class="interest-card p-4 sm:p-6 advanced-card">
                     <i class="fas fa-shield-alt"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Cybersecurity</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
+                <div class="interest-card p-4 sm:p-6 advanced-card">
                     <i class="fas fa-robot"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Automation</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
+                <div class="interest-card p-4 sm:p-6 advanced-card">
                     <i class="fas fa-link"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Blockchain</h4>
                 </div>
-                <div class="interest-card p-4 sm:p-6 rounded-2xl advanced-card">
+                <div class="interest-card p-4 sm:p-6 advanced-card">
                     <i class="fas fa-bitcoin-sign"></i> <h4 class="text-xl sm:text-xl font-semibold text-text-light font-montserrat">Cryptocurrency</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll">
+    <section id="contact" class="py-20 bg-dark-secondary px-4 sm:px-6 animate-on-scroll section-bg-pattern">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl sm:text-4xl font-extrabold mb-8 uppercase text-center section-heading-gradient">Get in Touch</h2>
             <p class="text-base sm:text-lg mb-10 max-w-4xl mx-auto text-text-light">
@@ -652,32 +765,39 @@
         <p>&copy; 2025 Mithilesh Reddy. All rights reserved.</p>
     </footer>
 
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navbarToggle = document.getElementById('navbar-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
+            const backToTopButton = document.getElementById('back-to-top');
+            const navLinks = document.querySelectorAll('.navbar-advanced a.nav-link-hover');
+            const sections = document.querySelectorAll('section[id]'); // Get all sections with an ID
 
             // Function to toggle mobile menu visibility
             navbarToggle.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('open'); // Use 'open' class for transition
             });
 
             // Function to close mobile menu when a link is clicked
             document.querySelectorAll('#mobile-menu a').forEach(link => {
                 link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('open'); // Close using 'open' class
                 });
             });
 
             // Function to close mobile menu when clicking outside of it
             document.addEventListener('click', function(event) {
-                if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                if (!mobileMenu.contains(event.target) && !navbarToggle.contains(event.target) && mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
                 }
             });
 
-            // Intersection Observer for scroll animations
+            // Intersection Observer for section fade-in animations and staggered content
             const animateOnScrollElements = document.querySelectorAll('.animate-on-scroll');
 
             const observerOptions = {
@@ -690,7 +810,24 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Stop observing once animated
+                        // Trigger staggered animation for children only in the 'about' section
+                        if (entry.target.id === 'about') {
+                            const staggeredItems = entry.target.querySelectorAll('.staggered-item');
+                            staggeredItems.forEach((item, index) => {
+                                item.style.transitionDelay = `${index * 0.1}s`; // Stagger delay
+                                item.classList.add('is-visible');
+                            });
+                        }
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                        // Reset staggered items when section leaves view, only for 'about'
+                        if (entry.target.id === 'about') {
+                            const staggeredItems = entry.target.querySelectorAll('.staggered-item');
+                            staggeredItems.forEach(item => {
+                                item.classList.remove('is-visible');
+                                item.style.transitionDelay = '0s'; // Reset delay
+                            });
+                        }
                     }
                 });
             }, observerOptions);
@@ -698,6 +835,59 @@
             // Observe each element that should animate on scroll
             animateOnScrollElements.forEach(element => {
                 observer.observe(element);
+            });
+
+            // Intersection Observer for active navigation links
+            const navObserverOptions = {
+                root: null,
+                rootMargin: '-50% 0px -50% 0px', // Trigger when section is roughly in the middle of the viewport
+                threshold: 0 // No threshold needed, just intersection
+            };
+
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const id = entry.target.getAttribute('id');
+                    const correspondingLink = document.querySelector(`.navbar-advanced a[href="#${id}"]`);
+
+                    if (correspondingLink) {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach(link => link.classList.remove('active')); // Remove active from all
+                            correspondingLink.classList.add('active'); // Add active to current
+                        } else {
+                            // If a section is no longer intersecting, remove its active class
+                            correspondingLink.classList.remove('active');
+                        }
+                    }
+                });
+            }, navObserverOptions);
+
+            // Observe each section for navigation highlighting
+            sections.forEach(section => {
+                navObserver.observe(section);
+            });
+
+
+            // Back to Top button functionality
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) { // Show button after scrolling 300px
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scroll to top
+                });
+            });
+
+            // Scroll progress bar
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollProgress = (window.scrollY / totalHeight) * 100;
+                document.getElementById('scroll-progress-bar').style.width = `${scrollProgress}%`;
             });
 
             // Particles.js initialization
