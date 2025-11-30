@@ -71,7 +71,7 @@
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
         ::-webkit-scrollbar-track {
             background: #030303;
@@ -98,14 +98,14 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.04);
             border-color: rgba(0, 230, 230, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
         }
 
         /* Utilities */
@@ -120,7 +120,7 @@
             transition: all 0.3s ease;
         }
         .glass-card:hover .icon-glow {
-            filter: drop-shadow(0 0 8px currentColor);
+            filter: drop-shadow(0 0 5px currentColor);
         }
 
         /* Particles */
@@ -178,13 +178,13 @@
     <!-- Loading Screen -->
     <div class="loader-wrapper" id="loader">
         <div class="flex flex-col items-center">
-            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-lux-teal mb-6"></div>
-            <h2 class="font-display font-bold text-sm tracking-[0.4em] text-white/80">INITIALIZING</h2>
+            <div class="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-lux-teal mb-4"></div>
+            <h2 class="font-display font-bold text-xs tracking-[0.4em] text-white/80">INITIALIZING</h2>
         </div>
     </div>
 
     <!-- Scroll Progress -->
-    <div id="scroll-progress" class="fixed top-0 left-0 h-[3px] bg-gradient-to-r from-lux-teal to-lux-pink z-[100] w-0 shadow-[0_0_10px_rgba(0,230,230,0.5)] transition-all duration-150 ease-out"></div>
+    <div id="scroll-progress" class="fixed top-0 left-0 h-[2px] bg-gradient-to-r from-lux-teal to-lux-pink z-[100] w-0 shadow-[0_0_10px_rgba(0,230,230,0.5)] transition-all duration-150 ease-out"></div>
 
     <!-- Background Elements -->
     <div class="fixed inset-0 z-[-1] bg-[#030303]">
@@ -194,24 +194,24 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 transition-all duration-500 border-b border-transparent" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-24 transition-all duration-500" id="nav-container">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 sm:h-24 transition-all duration-500" id="nav-container">
                 <!-- Brand -->
                 <div class="flex-shrink-0 cursor-pointer group">
-                    <a href="#" class="font-display font-black text-2xl tracking-tighter text-white transition-all duration-300">
+                    <a href="#" class="font-display font-black text-xl sm:text-2xl tracking-tighter text-white transition-all duration-300">
                         MITHILESH<span class="text-lux-teal group-hover:text-lux-pink transition-colors duration-300">.</span>REDDY
                     </a>
                 </div>
                 
                 <!-- Desktop Menu -->
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-10">
-                        <a href="#about" class="nav-link text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">About</a>
-                        <a href="#skills" class="nav-link text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
-                        <a href="#projects" class="nav-link text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
-                        <a href="#experience" class="nav-link text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Experience</a>
-                        <a href="#education" class="nav-link text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Education</a>
-                        <a href="#contact" class="ml-4 px-7 py-2.5 rounded-full border border-lux-teal/30 text-lux-teal text-xs font-bold uppercase tracking-widest hover:bg-lux-teal hover:text-black transition-all duration-300 shadow-[0_0_0_rgba(0,230,230,0)] hover:shadow-[0_0_20px_rgba(0,230,230,0.3)]">Contact</a>
+                    <div class="ml-10 flex items-baseline space-x-8 lg:space-x-10">
+                        <a href="#about" class="nav-link text-[10px] lg:text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">About</a>
+                        <a href="#skills" class="nav-link text-[10px] lg:text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Skills</a>
+                        <a href="#projects" class="nav-link text-[10px] lg:text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Projects</a>
+                        <a href="#experience" class="nav-link text-[10px] lg:text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Experience</a>
+                        <a href="#education" class="nav-link text-[10px] lg:text-xs uppercase tracking-[0.15em] font-medium text-gray-300 hover:text-white transition-colors">Education</a>
+                        <a href="#contact" class="ml-4 px-5 py-2 rounded-full border border-lux-teal/30 text-lux-teal text-[10px] lg:text-xs font-bold uppercase tracking-widest hover:bg-lux-teal hover:text-black transition-all duration-300 shadow-[0_0_0_rgba(0,230,230,0)] hover:shadow-[0_0_20px_rgba(0,230,230,0.3)]">Contact</a>
                     </div>
                 </div>
 
@@ -238,70 +238,70 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 px-4">
+    <section class="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10 px-4">
         <!-- Abstract Background Glows -->
-        <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-lux-teal/10 rounded-full blur-[120px] animate-pulse-slow"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-lux-pink/10 rounded-full blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+        <div class="absolute top-1/4 left-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-lux-teal/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-lux-pink/10 rounded-full blur-[80px] md:blur-[120px] animate-pulse-slow" style="animation-delay: 2s;"></div>
 
         <div class="relative z-10 text-center max-w-5xl mx-auto w-full">
-            <p class="text-lux-teal font-display font-bold tracking-[0.4em] text-xs md:text-sm mb-8 animate-float uppercase" data-aos="fade-down" data-aos-delay="200">Innovation · Intelligence · Impact</p>
+            <p class="text-lux-teal font-display font-bold tracking-[0.3em] md:tracking-[0.4em] text-[10px] md:text-sm mb-6 animate-float uppercase" data-aos="fade-down" data-aos-delay="200">Innovation · Intelligence · Impact</p>
             
-            <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-black tracking-tight text-white mb-8 leading-[0.9]" data-aos="zoom-in" data-aos-duration="1200">
+            <h1 class="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tight text-white mb-6 leading-[0.9]" data-aos="zoom-in" data-aos-duration="1200">
                 MITHILESH <br/>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-lux-teal via-white to-lux-pink opacity-90">REDDY</span>
             </h1>
             
-            <div class="h-1 w-20 bg-gradient-to-r from-lux-teal to-lux-pink mx-auto mb-10 rounded-full opacity-80"></div>
+            <div class="h-1 w-16 md:w-20 bg-gradient-to-r from-lux-teal to-lux-pink mx-auto mb-8 rounded-full opacity-80"></div>
 
-            <p class="text-base sm:text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto mb-14 leading-relaxed" data-aos="fade-up" data-aos-delay="400">
-                Full-Stack Developer <span class="mx-2 text-lux-teal">•</span> Machine Learning Enthusiast <span class="mx-2 text-lux-pink">•</span> AI Innovator
+            <p class="text-sm sm:text-lg md:text-xl text-gray-400 font-light max-w-xl md:max-w-2xl mx-auto mb-10 leading-relaxed px-4" data-aos="fade-up" data-aos-delay="400">
+                Full-Stack Developer <span class="mx-1 md:mx-2 text-lux-teal">•</span> Machine Learning Enthusiast <span class="mx-1 md:mx-2 text-lux-pink">•</span> AI Innovator
             </p>
 
             <!-- Social Links -->
             <div class="flex flex-wrap justify-center gap-4 sm:gap-6" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-lux-teal hover:border-lux-teal hover:text-black transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in text-lg"></i>
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-lux-teal hover:border-lux-teal hover:text-black transition-all duration-300 hover:scale-110" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in text-base md:text-lg"></i>
                 </a>
-                <a href="https://github.com/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-white hover:border-white hover:text-black transition-all duration-300 hover:scale-110" aria-label="GitHub">
-                    <i class="fab fa-github text-lg"></i>
+                <a href="https://github.com/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-white hover:border-white hover:text-black transition-all duration-300 hover:scale-110" aria-label="GitHub">
+                    <i class="fab fa-github text-base md:text-lg"></i>
                 </a>
-                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#2EC866] hover:border-[#2EC866] hover:text-black transition-all duration-300 hover:scale-110" aria-label="HackerRank">
-                    <i class="fab fa-hackerrank text-lg"></i>
+                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#2EC866] hover:border-[#2EC866] hover:text-black transition-all duration-300 hover:scale-110" aria-label="HackerRank">
+                    <i class="fab fa-hackerrank text-base md:text-lg"></i>
                 </a>
-                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#20BEFF] hover:border-[#20BEFF] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Kaggle">
-                    <i class="fab fa-kaggle text-lg"></i>
+                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#20BEFF] hover:border-[#20BEFF] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Kaggle">
+                    <i class="fab fa-kaggle text-base md:text-lg"></i>
                 </a>
-                <a href="https://dev.to/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-black hover:border-white hover:text-white transition-all duration-300 hover:scale-110" aria-label="Dev.to">
-                    <i class="fab fa-dev text-lg"></i>
+                <a href="https://dev.to/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-black hover:border-white hover:text-white transition-all duration-300 hover:scale-110" aria-label="Dev.to">
+                    <i class="fab fa-dev text-base md:text-lg"></i>
                 </a>
-                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#F48024] hover:border-[#F48024] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Stack Overflow">
-                    <i class="fab fa-stack-overflow text-lg"></i>
+                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#F48024] hover:border-[#F48024] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Stack Overflow">
+                    <i class="fab fa-stack-overflow text-base md:text-lg"></i>
                 </a>
-                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" class="group w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Reddit">
-                    <i class="fab fa-reddit text-lg"></i>
+                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" class="group w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-gray-300 hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-white transition-all duration-300 hover:scale-110" aria-label="Reddit">
+                    <i class="fab fa-reddit text-base md:text-lg"></i>
                 </a>
             </div>
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <a href="#about" class="text-white/30 hover:text-lux-teal transition-colors p-2">
-                <i class="fas fa-chevron-down text-xl"></i>
+                <i class="fas fa-chevron-down text-lg"></i>
             </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="glass-panel p-8 md:p-14 lg:p-20 rounded-3xl relative overflow-hidden" data-aos="fade-up">
+    <section id="about" class="py-16 md:py-24 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 md:px-6">
+            <div class="glass-panel p-6 md:p-14 lg:p-20 rounded-2xl md:rounded-3xl relative overflow-hidden" data-aos="fade-up">
                 <!-- Decorative Elements -->
-                <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-lux-teal/5 to-transparent rounded-bl-full pointer-events-none"></div>
-                <div class="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-lux-pink/5 to-transparent rounded-tr-full pointer-events-none"></div>
+                <div class="absolute top-0 right-0 w-24 md:w-40 h-24 md:h-40 bg-gradient-to-bl from-lux-teal/5 to-transparent rounded-bl-full pointer-events-none"></div>
+                <div class="absolute bottom-0 left-0 w-24 md:w-40 h-24 md:h-40 bg-gradient-to-tr from-lux-pink/5 to-transparent rounded-tr-full pointer-events-none"></div>
                 
                 <div class="text-center relative z-10">
-                    <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-10 tracking-wide">ABOUT <span class="text-gradient">ME</span></h2>
-                    <p class="text-base md:text-lg text-gray-300 leading-loose font-light max-w-3xl mx-auto text-justify sm:text-center">
+                    <h2 class="text-2xl md:text-5xl font-display font-bold text-white mb-6 md:mb-10 tracking-wide">ABOUT <span class="text-gradient">ME</span></h2>
+                    <p class="text-sm md:text-lg text-gray-300 leading-7 md:leading-loose font-light max-w-3xl mx-auto text-justify sm:text-center">
                         I am a <span class="text-white font-medium">Master of Technology</span> student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.
                     </p>
                 </div>
@@ -310,175 +310,175 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-24 lg:py-32 bg-[#050505] relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <p class="text-lux-pink font-display font-bold tracking-[0.3em] text-xs uppercase mb-4">Technology Stack</p>
-                <h2 class="text-4xl md:text-5xl font-display font-black text-white">MY SKILLS</h2>
+    <section id="skills" class="py-16 md:py-32 bg-[#050505] relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
+                <p class="text-lux-pink font-display font-bold tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs uppercase mb-3">Technology Stack</p>
+                <h2 class="text-3xl md:text-5xl font-display font-black text-white">MY SKILLS</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8">
                 <!-- Skill Card 1 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="0">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-code text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">CODE</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-code text-2xl md:text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">CODE</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Programming Languages</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Python, C, JavaScript, Java</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Programming</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Python, C, JavaScript, Java</p>
                 </div>
 
                 <!-- Skill Card 2 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-globe text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">WEB</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-globe text-2xl md:text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">WEB</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Web Development</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Web Dev</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">HTML, CSS, React, Node.js, Express, Tailwind</p>
                 </div>
 
                 <!-- Skill Card 3 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-database text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">DATA</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-database text-2xl md:text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">DATA</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Database Management</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">MySQL, MongoDB</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Database</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">MySQL, MongoDB</p>
                 </div>
 
                 <!-- Skill Card 4 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-cloud text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">CLOUD</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-cloud text-2xl md:text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">CLOUD</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Cloud Development</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">AWS, Firebase, EC2, Amplify, S3 buckets, Route 53</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Cloud</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">AWS, Firebase, EC2, Amplify, S3, Route 53</p>
                 </div>
 
                 <!-- Skill Card 5 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-chart-line text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">AI / ML</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-chart-line text-2xl md:text-4xl text-gray-600 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-teal/30 group-hover:text-lux-teal transition-colors">AI / ML</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Data Science & ML</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Data Science</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Pandas, NumPy, Matplotlib, Scikit-learn</p>
                 </div>
 
                 <!-- Skill Card 6 -->
-                <div class="glass-card rounded-2xl p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex items-center justify-between mb-8">
-                        <i class="fas fa-tools text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
-                        <span class="text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-2 py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">DEVOPS</span>
+                <div class="glass-card rounded-xl p-5 md:p-8 group flex flex-col h-full" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center justify-between mb-4 md:mb-8">
+                        <i class="fas fa-tools text-2xl md:text-4xl text-gray-600 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-[8px] md:text-[10px] font-mono font-bold text-gray-500 border border-gray-800 px-1.5 py-0.5 md:px-2 md:py-1 rounded group-hover:border-lux-pink/30 group-hover:text-lux-pink transition-colors">DEVOPS</span>
                     </div>
-                    <h3 class="text-xl font-display font-bold text-white mb-3">Tools & Platforms</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Linux, Windows, Jenkins, Git, GitLab, Figma, Unity</p>
+                    <h3 class="text-sm md:text-xl font-display font-bold text-white mb-2 md:mb-3">Tools</h3>
+                    <p class="text-xs md:text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">Linux, Windows, Jenkins, Git, GitLab, Figma</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 lg:py-32 px-6">
+    <section id="projects" class="py-16 md:py-32 px-4 md:px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-white/5 pb-6" data-aos="fade-right">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-16 border-b border-white/5 pb-4 md:pb-6" data-aos="fade-right">
                 <div>
-                    <p class="text-lux-teal font-display font-bold tracking-[0.3em] text-xs uppercase mb-3">Portfolio</p>
-                    <h2 class="text-4xl md:text-5xl font-display font-black text-white">PROJECT SHOWCASE</h2>
+                    <p class="text-lux-teal font-display font-bold tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs uppercase mb-2">Portfolio</p>
+                    <h2 class="text-3xl md:text-5xl font-display font-black text-white">PROJECTS</h2>
                 </div>
-                <div class="mt-4 md:mt-0 text-gray-500 text-sm italic font-light tracking-wide">Exploring Innovation Through Code</div>
+                <div class="mt-2 md:mt-0 text-gray-500 text-xs md:text-sm italic font-light tracking-wide">Exploring Innovation Through Code</div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
                 <!-- Project 1 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-teal/30 flex flex-col h-full" data-aos="fade-up">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Machine Learning</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Machine Learning</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Heart Disease Prediction</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5% and F1-Score of 98.52%.</p>
-                        <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-teal transition-colors">Heart Disease Prediction</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5%.</p>
+                        <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-pink/30 flex flex-col h-full" data-aos="fade-up" data-aos-delay="100">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">Web Game</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">Web Game</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Tic-Tac-Toe Web Game</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">Developed and deployed a dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
-                        <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-pink transition-colors">Tic-Tac-Toe Web Game</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
+                        <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-teal/30 flex flex-col h-full" data-aos="fade-up" data-aos-delay="200">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Web Development</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Web Development</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Snake Game</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">A classic Snake Game built with HTML, CSS, and JavaScript, tracking score, high score, and games played using localStorage.</p>
-                        <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-teal transition-colors">Snake Game</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Classic Snake Game built with HTML, CSS, and JS, with score tracking using localStorage.</p>
+                        <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 4 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-pink/30 flex flex-col h-full" data-aos="fade-up" data-aos-delay="300">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">VR / AR</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">VR / AR</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Immersive Google Classroom</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">Created an interactive VR PPT navigation system with gaze control using Unity and Google Cardboard SDK for enhanced learning.</p>
-                        <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-pink transition-colors">Immersive Google Classroom</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Interactive VR PPT navigation with gaze control using Unity and Google Cardboard SDK.</p>
+                        <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 5 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-teal/30 flex flex-col h-full" data-aos="fade-up" data-aos-delay="400">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Software Engineering</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-teal uppercase tracking-[0.2em] border border-lux-teal/20 px-2 py-1 rounded-full">Software Engineering</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Bank App Python</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">A Python bank app using OOP concepts like Encapsulation, Inheritance, Abstraction, and Polymorphism for account management.</p>
-                        <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-teal transition-colors">Bank App Python</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Python bank app using OOP concepts like Encapsulation and Polymorphism for account management.</p>
+                        <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-teal transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Project 6 -->
                 <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all duration-300 hover:border-lux-pink/30 flex flex-col h-full" data-aos="fade-up" data-aos-delay="500">
-                    <div class="p-8 flex flex-col h-full">
-                        <div class="mb-5">
-                            <span class="text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">Cybersecurity</span>
+                    <div class="p-6 md:p-8 flex flex-col h-full">
+                        <div class="mb-4">
+                            <span class="text-[9px] md:text-[10px] font-bold text-lux-pink uppercase tracking-[0.2em] border border-lux-pink/20 px-2 py-1 rounded-full">Cybersecurity</span>
                         </div>
-                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Image Steganography</h3>
-                        <p class="text-sm text-gray-400 mb-8 leading-relaxed flex-grow">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using password.</p>
-                        <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-flex items-center space-x-3 text-white text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-3 group-hover:text-lux-pink transition-colors">Image Steganography</h3>
+                        <p class="text-xs md:text-sm text-gray-400 mb-6 leading-relaxed flex-grow">Secure image steganography tool to hide and retrieve encrypted messages within images.</p>
+                        <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-flex items-center space-x-3 text-white text-xs md:text-sm font-semibold hover:text-lux-pink transition-all group-hover:translate-x-1">
                             <span>View Project</span>
-                            <i class="fas fa-arrow-right text-xs"></i>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
                         </a>
                     </div>
                 </div>
@@ -487,62 +487,54 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-24 lg:py-32 bg-[#050505] relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-20 tracking-wide" data-aos="fade-up">PROFESSIONAL <span class="text-lux-teal">EXPERIENCE</span></h2>
+    <section id="experience" class="py-16 md:py-32 bg-[#050505] relative">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-5xl font-display font-black text-white text-center mb-12 md:mb-20 tracking-wide" data-aos="fade-up">PROFESSIONAL <span class="text-lux-teal">EXPERIENCE</span></h2>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-12">
                 <!-- Exp 1 -->
-                <div class="glass-panel p-8 md:p-10 rounded-2xl relative border-l-2 border-lux-teal flex flex-col" data-aos="fade-right">
-                    <div class="absolute top-4 right-6 text-7xl text-white/5 font-black select-none pointer-events-none">01</div>
+                <div class="glass-panel p-6 md:p-10 rounded-xl md:rounded-2xl relative border-l-2 border-lux-teal flex flex-col" data-aos="fade-right">
+                    <div class="absolute top-4 right-6 text-5xl md:text-7xl text-white/5 font-black select-none pointer-events-none">01</div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-display font-bold text-white mb-2">Cyber Security Internship</h3>
-                        <p class="text-lux-teal font-medium mb-1">Edunet Foundation (AICTE Collaboration)</p>
-                        <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-6">Jan 2025 - Feb 2025</p>
-                        <ul class="space-y-4">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-2">Cyber Security Internship</h3>
+                        <p class="text-lux-teal font-medium mb-1 text-sm md:text-base">Edunet Foundation (AICTE Collaboration)</p>
+                        <p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-4 md:mb-6">Jan 2025 - Feb 2025</p>
+                        <ul class="space-y-3 md:space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Gained expertise in network security, encryption, and ethical hacking through the SkillsBuild Program.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Gained expertise in network security, encryption, and ethical hacking through the SkillsBuild Program.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using a password.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using a password.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Acquired experience in data protection, threat mitigation, and ethical practices to safeguard sensitive information.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Participated in weekly mentor-led sessions and completed assigned tasks and milestones.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Acquired experience in data protection and ethical practices.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Exp 2 -->
-                <div class="glass-panel p-8 md:p-10 rounded-2xl relative border-l-2 border-lux-pink flex flex-col" data-aos="fade-left">
-                    <div class="absolute top-4 right-6 text-7xl text-white/5 font-black select-none pointer-events-none">02</div>
+                <div class="glass-panel p-6 md:p-10 rounded-xl md:rounded-2xl relative border-l-2 border-lux-pink flex flex-col" data-aos="fade-left">
+                    <div class="absolute top-4 right-6 text-5xl md:text-7xl text-white/5 font-black select-none pointer-events-none">02</div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-display font-bold text-white mb-2">Foundations of AI Internship</h3>
-                        <p class="text-lux-pink font-medium mb-1">Microsoft initiative, implemented by Edunet Foundation</p>
-                        <p class="text-gray-500 text-xs font-bold uppercase tracking-wider mb-6">April 2025 - May 2025</p>
-                        <ul class="space-y-4">
+                        <h3 class="text-lg md:text-2xl font-display font-bold text-white mb-2">Foundations of AI Internship</h3>
+                        <p class="text-lux-pink font-medium mb-1 text-sm md:text-base">Microsoft initiative, implemented by Edunet Foundation</p>
+                        <p class="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-wider mb-4 md:mb-6">April 2025 - May 2025</p>
+                        <ul class="space-y-3 md:space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Learned and demonstrated AI and Cloud skills to enhance employability and boost confidence in emerging technologies.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Learned and demonstrated AI and Cloud skills to enhance employability in emerging technologies.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Gained access to curated learning content through Microsoft Learn and the LMS Portal.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Gained access to curated learning content through Microsoft Learn and the LMS Portal.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Participated in interactive masterclasses led by industry experts.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-4 text-xs"></i>
-                                <span class="text-gray-400 text-sm leading-relaxed">Worked on real-world problem statements with hands-on practice and mentorship.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-[10px] md:text-xs"></i>
+                                <span class="text-gray-400 text-xs md:text-sm leading-relaxed">Worked on real-world problem statements with hands-on practice.</span>
                             </li>
                         </ul>
                     </div>
@@ -551,15 +543,55 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-24 lg:py-32 px-6 relative overflow-hidden">
+    <!-- Education Section (Redesigned for Mobile) -->
+    <section id="education" class="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden">
         <!-- Background decorative line (visible on desktop only) -->
         <div class="absolute left-1/2 top-32 bottom-32 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent hidden md:block"></div>
 
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-24" data-aos="fade-up">EDUCATION</h2>
+            <h2 class="text-3xl md:text-5xl font-display font-black text-white text-center mb-10 md:mb-24" data-aos="fade-up">EDUCATION</h2>
 
-            <div class="space-y-12">
+            <!-- Mobile Grid View (Hidden on MD+) -->
+            <div class="grid grid-cols-1 xs:grid-cols-2 gap-4 md:hidden" data-aos="fade-up">
+                <div class="glass-card p-5 rounded-xl border-t-2 border-lux-teal bg-white/5">
+                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Oct 2023 - Present</span>
+                    <h4 class="text-sm font-bold text-white mb-0.5">M.Tech (CS)</h4>
+                    <p class="text-lux-teal font-medium text-[10px] mb-2">JNTUA College of Engg.</p>
+                    <div class="inline-block bg-lux-teal/10 border border-lux-teal/20 px-2 py-0.5 rounded text-[10px] font-bold text-lux-teal">
+                        8.28 CGPA
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl border-t-2 border-lux-pink bg-white/5">
+                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Aug 2018 - Jun 2022</span>
+                    <h4 class="text-sm font-bold text-white mb-0.5">B.Tech (Comp. Engg)</h4>
+                    <p class="text-lux-pink font-medium text-[10px] mb-2">Presidency University</p>
+                    <div class="inline-block bg-lux-pink/10 border border-lux-pink/20 px-2 py-0.5 rounded text-[10px] font-bold text-lux-pink">
+                        6.34 CGPA
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl border-t-2 border-gray-600 bg-white/5">
+                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Jun 2016 - Apr 2018</span>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Class XII</h4>
+                    <p class="text-gray-400 font-medium text-[10px] mb-2">Narayana Jr College</p>
+                    <div class="inline-block bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] font-bold text-gray-300">
+                        86.66%
+                    </div>
+                </div>
+
+                <div class="glass-card p-5 rounded-xl border-t-2 border-gray-600 bg-white/5">
+                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Jun 2015 - May 2016</span>
+                    <h4 class="text-sm font-bold text-white mb-0.5">Class X</h4>
+                    <p class="text-gray-400 font-medium text-[10px] mb-2">Montessori Indus School</p>
+                    <div class="inline-block bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] font-bold text-gray-300">
+                        8.5 CGPA
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Timeline View (Hidden on Mobile) -->
+            <div class="hidden md:block space-y-12">
                 <!-- Education Item 1 (Right) -->
                 <div class="flex flex-col md:flex-row items-center justify-between group" data-aos="fade-up">
                     <div class="hidden md:block w-5/12"></div>
@@ -628,115 +660,115 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-24 bg-[#050505] border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-6" data-aos="fade-up">CREDENTIALS</h2>
-            <p class="text-gray-500 text-center max-w-2xl mx-auto mb-20 text-sm tracking-wide" data-aos="fade-up" data-aos-delay="100">VALIDATED EXPERTISE THROUGH INDUSTRY-RECOGNIZED CERTIFICATIONS</p>
+    <section id="certifications" class="py-16 md:py-24 bg-[#050505] border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-5xl font-display font-black text-white text-center mb-4 md:mb-6" data-aos="fade-up">CREDENTIALS</h2>
+            <p class="text-gray-500 text-center max-w-2xl mx-auto mb-10 md:mb-20 text-[10px] md:text-sm tracking-wide" data-aos="fade-up" data-aos-delay="100">VALIDATED EXPERTISE THROUGH INDUSTRY-RECOGNIZED CERTIFICATIONS</p>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
                 <!-- Cert Cards -->
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-4 group-hover:bg-lux-teal/20 transition-colors">
-                        <i class="fas fa-certificate text-lux-teal text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-3 md:mb-4 group-hover:bg-lux-teal/20 transition-colors">
+                        <i class="fas fa-certificate text-lux-teal text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">Software Engineer Certificate</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">HackerRank</p>
-                    <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">Software Engineer Certificate</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="text-[9px] md:text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="50">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-4 group-hover:bg-lux-pink/20 transition-colors">
-                        <i class="fas fa-database text-lux-pink text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-3 md:mb-4 group-hover:bg-lux-pink/20 transition-colors">
+                        <i class="fas fa-database text-lux-pink text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">SQL (Advanced) Certificate</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">HackerRank</p>
-                    <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">SQL (Advanced) Certificate</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="text-[9px] md:text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-4 group-hover:bg-lux-teal/20 transition-colors">
-                        <i class="fab fa-js text-lux-teal text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-3 md:mb-4 group-hover:bg-lux-teal/20 transition-colors">
+                        <i class="fab fa-js text-lux-teal text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">JavaScript (Intermediate)</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">HackerRank</p>
-                    <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">JavaScript (Intermediate)</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="text-[9px] md:text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="150">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-4 group-hover:bg-lux-pink/20 transition-colors">
-                        <i class="fab fa-python text-lux-pink text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-3 md:mb-4 group-hover:bg-lux-pink/20 transition-colors">
+                        <i class="fab fa-python text-lux-pink text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">Python Essentials 1</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">Cisco</p>
-                    <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">Python Essentials 1</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">Cisco</p>
+                    <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="text-[9px] md:text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify</a>
                 </div>
                 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-4 group-hover:bg-lux-teal/20 transition-colors">
-                        <i class="fas fa-robot text-lux-teal text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-3 md:mb-4 group-hover:bg-lux-teal/20 transition-colors">
+                        <i class="fas fa-robot text-lux-teal text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">ChatGPT Prompt Engineering</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">DeepLearning.AI</p>
-                    <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">ChatGPT Prompt Engineering</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">DeepLearning.AI</p>
+                    <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="text-[9px] md:text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="250">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-4 group-hover:bg-lux-pink/20 transition-colors">
-                        <i class="fas fa-laptop-code text-lux-pink text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-3 md:mb-4 group-hover:bg-lux-pink/20 transition-colors">
+                        <i class="fas fa-laptop-code text-lux-pink text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">Responsive Web Design</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">freeCodeCamp</p>
-                    <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">Responsive Web Design</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">freeCodeCamp</p>
+                    <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="text-[9px] md:text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-4 group-hover:bg-lux-teal/20 transition-colors">
-                        <i class="fas fa-chart-pie text-lux-teal text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-teal/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-teal/10 mb-3 md:mb-4 group-hover:bg-lux-teal/20 transition-colors">
+                        <i class="fas fa-chart-pie text-lux-teal text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">Applied Data Science (Python)</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">IBM</p>
-                    <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">Applied Data Science</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">IBM</p>
+                    <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="text-[9px] md:text-[10px] text-lux-teal uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-teal/30 hover:border-white pb-1">Verify</a>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="350">
-                    <div class="h-10 w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-4 group-hover:bg-lux-pink/20 transition-colors">
-                        <i class="fas fa-brain text-lux-pink text-lg"></i>
+                <div class="glass-card p-4 md:p-6 rounded-xl border-t-2 border-lux-pink/40 hover:bg-white/5 transition-all group" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="h-8 w-8 md:h-10 md:w-10 flex items-center justify-center rounded-full bg-lux-pink/10 mb-3 md:mb-4 group-hover:bg-lux-pink/20 transition-colors">
+                        <i class="fas fa-brain text-lux-pink text-sm md:text-lg"></i>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-2 leading-tight min-h-[48px]">Machine Learning with Python</h4>
-                    <p class="text-gray-500 text-xs mb-6 uppercase tracking-wider">IBM</p>
-                    <a href="https://www.credly.com/badges/69196b29-ac8d-4ddd-aa0a-be3eafc2f8e2" target="_blank" class="text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify Credential</a>
+                    <h4 class="text-white font-bold text-xs md:text-base mb-1 md:mb-2 leading-tight md:min-h-[48px]">ML with Python</h4>
+                    <p class="text-gray-500 text-[9px] md:text-xs mb-3 md:mb-6 uppercase tracking-wider">IBM</p>
+                    <a href="https://www.credly.com/badges/69196b29-ac8d-4ddd-aa0a-be3eafc2f8e2" target="_blank" class="text-[9px] md:text-[10px] text-lux-pink uppercase font-bold tracking-widest hover:text-white transition-colors border-b border-lux-pink/30 hover:border-white pb-1">Verify</a>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                 <p class="text-gray-600 text-[10px] uppercase tracking-[0.2em]">And more...</p>
+            <div class="text-center mt-8 md:mt-12">
+                 <p class="text-gray-600 text-[9px] md:text-[10px] uppercase tracking-[0.2em]">And more...</p>
             </div>
         </div>
     </section>
 
     <!-- Achievements Section -->
-    <section class="py-24 px-6 relative">
+    <section class="py-16 md:py-24 px-4 md:px-6 relative">
         <div class="max-w-6xl mx-auto">
-             <div class="glass-panel p-10 md:p-16 rounded-3xl border border-white/5" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-white text-center mb-16 tracking-wide">KEY ACHIEVEMENTS</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+             <div class="glass-panel p-6 md:p-16 rounded-2xl md:rounded-3xl border border-white/5" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-display font-bold text-white text-center mb-8 md:mb-16 tracking-wide">KEY ACHIEVEMENTS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center">
                     <div class="relative">
-                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-lux-gold/10 mb-6">
-                            <i class="fas fa-trophy text-2xl text-lux-gold"></i>
+                        <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-lux-gold/10 mb-4 md:mb-6">
+                            <i class="fas fa-trophy text-xl md:text-2xl text-lux-gold"></i>
                         </div>
-                        <p class="text-gray-300 leading-relaxed text-sm"><span class="block text-white font-bold text-xl mb-2">98.5% Accuracy</span>Achieved high precision in a machine learning disease prediction model.</p>
+                        <p class="text-gray-300 leading-relaxed text-xs md:text-sm"><span class="block text-white font-bold text-lg md:text-xl mb-2">98.5% Accuracy</span>Achieved high precision in a machine learning disease prediction model.</p>
                     </div>
                     <div class="relative md:border-l md:border-r border-white/5 md:px-8">
-                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-lux-teal/10 mb-6">
-                            <i class="fas fa-users text-2xl text-lux-teal"></i>
+                        <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-lux-teal/10 mb-4 md:mb-6">
+                            <i class="fas fa-users text-xl md:text-2xl text-lux-teal"></i>
                         </div>
-                        <p class="text-gray-300 leading-relaxed text-sm"><span class="block text-white font-bold text-xl mb-2">Team Leadership</span>Led university project teams to successful completion through collaboration.</p>
+                        <p class="text-gray-300 leading-relaxed text-xs md:text-sm"><span class="block text-white font-bold text-lg md:text-xl mb-2">Team Leadership</span>Led university project teams to successful completion through collaboration.</p>
                     </div>
                     <div class="relative">
-                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-lux-pink/10 mb-6">
-                            <i class="fas fa-heart text-2xl text-lux-pink"></i>
+                        <div class="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-full bg-lux-pink/10 mb-4 md:mb-6">
+                            <i class="fas fa-heart text-xl md:text-2xl text-lux-pink"></i>
                         </div>
-                        <p class="text-gray-300 leading-relaxed text-sm"><span class="block text-white font-bold text-xl mb-2">Community Impact</span>Coordinated donations to aid underprivileged groups creating positive change.</p>
+                        <p class="text-gray-300 leading-relaxed text-xs md:text-sm"><span class="block text-white font-bold text-lg md:text-xl mb-2">Community Impact</span>Coordinated donations to aid underprivileged groups creating positive change.</p>
                     </div>
                 </div>
              </div>
@@ -744,50 +776,50 @@
     </section>
 
     <!-- Interests -->
-    <section class="py-20 px-6 bg-[#020202]">
+    <section class="py-12 md:py-20 px-4 md:px-6 bg-[#020202]">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-sm font-bold text-gray-500 uppercase tracking-[0.3em] mb-12">Core Interests</h2>
-            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up">
-                <div class="px-6 py-3 border border-white/10 rounded-full flex items-center space-x-3 hover:border-lux-teal/50 hover:bg-lux-teal/5 transition-all cursor-default">
-                    <i class="fas fa-lightbulb text-lux-teal text-sm"></i>
-                    <span class="text-gray-300 text-sm font-medium">Exploring Tech</span>
+            <h2 class="text-xs md:text-sm font-bold text-gray-500 uppercase tracking-[0.3em] mb-8 md:mb-12">Core Interests</h2>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4" data-aos="fade-up">
+                <div class="px-4 py-2 md:px-6 md:py-3 border border-white/10 rounded-full flex items-center space-x-2 md:space-x-3 hover:border-lux-teal/50 hover:bg-lux-teal/5 transition-all cursor-default">
+                    <i class="fas fa-lightbulb text-lux-teal text-xs md:text-sm"></i>
+                    <span class="text-gray-300 text-xs md:text-sm font-medium">Exploring Tech</span>
                 </div>
-                <div class="px-6 py-3 border border-white/10 rounded-full flex items-center space-x-3 hover:border-lux-pink/50 hover:bg-lux-pink/5 transition-all cursor-default">
-                    <i class="fas fa-shield-alt text-lux-pink text-sm"></i>
-                    <span class="text-gray-300 text-sm font-medium">Cybersecurity</span>
+                <div class="px-4 py-2 md:px-6 md:py-3 border border-white/10 rounded-full flex items-center space-x-2 md:space-x-3 hover:border-lux-pink/50 hover:bg-lux-pink/5 transition-all cursor-default">
+                    <i class="fas fa-shield-alt text-lux-pink text-xs md:text-sm"></i>
+                    <span class="text-gray-300 text-xs md:text-sm font-medium">Cybersecurity</span>
                 </div>
-                <div class="px-6 py-3 border border-white/10 rounded-full flex items-center space-x-3 hover:border-lux-teal/50 hover:bg-lux-teal/5 transition-all cursor-default">
-                    <i class="fas fa-robot text-lux-teal text-sm"></i>
-                    <span class="text-gray-300 text-sm font-medium">Automation</span>
+                <div class="px-4 py-2 md:px-6 md:py-3 border border-white/10 rounded-full flex items-center space-x-2 md:space-x-3 hover:border-lux-teal/50 hover:bg-lux-teal/5 transition-all cursor-default">
+                    <i class="fas fa-robot text-lux-teal text-xs md:text-sm"></i>
+                    <span class="text-gray-300 text-xs md:text-sm font-medium">Automation</span>
                 </div>
-                <div class="px-6 py-3 border border-white/10 rounded-full flex items-center space-x-3 hover:border-lux-pink/50 hover:bg-lux-pink/5 transition-all cursor-default">
-                    <i class="fas fa-link text-lux-pink text-sm"></i>
-                    <span class="text-gray-300 text-sm font-medium">Blockchain</span>
+                <div class="px-4 py-2 md:px-6 md:py-3 border border-white/10 rounded-full flex items-center space-x-2 md:space-x-3 hover:border-lux-pink/50 hover:bg-lux-pink/5 transition-all cursor-default">
+                    <i class="fas fa-link text-lux-pink text-xs md:text-sm"></i>
+                    <span class="text-gray-300 text-xs md:text-sm font-medium">Blockchain</span>
                 </div>
-                <div class="px-6 py-3 border border-white/10 rounded-full flex items-center space-x-3 hover:border-lux-gold/50 hover:bg-lux-gold/5 transition-all cursor-default">
-                    <i class="fas fa-bitcoin-sign text-lux-gold text-sm"></i>
-                    <span class="text-gray-300 text-sm font-medium">Cryptocurrency</span>
+                <div class="px-4 py-2 md:px-6 md:py-3 border border-white/10 rounded-full flex items-center space-x-2 md:space-x-3 hover:border-lux-gold/50 hover:bg-lux-gold/5 transition-all cursor-default">
+                    <i class="fas fa-bitcoin-sign text-lux-gold text-xs md:text-sm"></i>
+                    <span class="text-gray-300 text-xs md:text-sm font-medium">Cryptocurrency</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-32 px-6 relative bg-gradient-to-t from-black to-[#050505]">
+    <section id="contact" class="py-24 md:py-32 px-4 md:px-6 relative bg-gradient-to-t from-black to-[#050505]">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tighter" data-aos="zoom-in">LET'S CONNECT</h2>
-            <p class="text-lg md:text-xl text-gray-400 mb-16 max-w-2xl mx-auto font-light">I'm always open to new opportunities and collaborations. <br class="hidden md:block" />Ready to build something extraordinary?</p>
+            <h2 class="text-4xl md:text-8xl font-display font-black text-white mb-6 md:mb-8 tracking-tighter" data-aos="zoom-in">LET'S CONNECT</h2>
+            <p class="text-sm md:text-xl text-gray-400 mb-10 md:mb-16 max-w-2xl mx-auto font-light">I'm always open to new opportunities and collaborations. <br class="hidden md:block" />Ready to build something extraordinary?</p>
             
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-6" data-aos="fade-up">
-                <a href="mailto:s.mithilesh.reddi@gmail.com" class="group relative px-10 py-5 bg-white text-black font-bold text-sm tracking-widest uppercase rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)]">
-                    <span class="relative z-10 flex items-center">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-6" data-aos="fade-up">
+                <a href="mailto:s.mithilesh.reddi@gmail.com" class="group relative px-8 py-4 md:px-10 md:py-5 bg-white text-black font-bold text-xs md:text-sm tracking-widest uppercase rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] w-full sm:w-auto">
+                    <span class="relative z-10 flex items-center justify-center">
                         <i class="fas fa-envelope mr-3"></i> Email Me
                     </span>
                     <div class="absolute inset-0 bg-lux-teal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
                 </a>
                 
-                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="group relative px-10 py-5 bg-transparent border border-white/30 text-white font-bold text-sm tracking-widest uppercase rounded-full overflow-hidden transition-all hover:border-white hover:scale-105">
-                    <span class="relative z-10 flex items-center">
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="group relative px-8 py-4 md:px-10 md:py-5 bg-transparent border border-white/30 text-white font-bold text-xs md:text-sm tracking-widest uppercase rounded-full overflow-hidden transition-all hover:border-white hover:scale-105 w-full sm:w-auto">
+                    <span class="relative z-10 flex items-center justify-center">
                         <i class="fab fa-linkedin-in mr-3"></i> Linkedin
                     </span>
                     <div class="absolute inset-0 bg-lux-pink/20 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
@@ -797,13 +829,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-black border-t border-white/5 text-center">
-        <p class="text-gray-600 text-xs font-medium tracking-[0.2em] uppercase">&copy; 2025 Mithilesh Reddy. Crafted with Precision.</p>
+    <footer class="py-8 md:py-10 bg-black border-t border-white/5 text-center">
+        <p class="text-gray-600 text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase">&copy; 2025 Mithilesh Reddy. Crafted with Precision.</p>
     </footer>
 
     <!-- Back to Top -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-white/5 backdrop-blur-md rounded-full text-white flex items-center justify-center opacity-0 transition-all duration-500 hover:bg-lux-teal hover:text-black hover:scale-110 z-40 border border-white/10 shadow-lg">
-        <i class="fas fa-arrow-up text-sm"></i>
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-10 h-10 md:w-12 md:h-12 bg-white/5 backdrop-blur-md rounded-full text-white flex items-center justify-center opacity-0 transition-all duration-500 hover:bg-lux-teal hover:text-black hover:scale-110 z-40 border border-white/10 shadow-lg">
+        <i class="fas fa-arrow-up text-xs md:text-sm"></i>
     </button>
 
     <!-- Scripts -->
@@ -856,12 +888,12 @@
             if (window.scrollY > 20) {
                 navbar.classList.add('bg-[#030303]/90', 'backdrop-blur-xl', 'border-white/5');
                 navbar.classList.remove('border-transparent');
-                navContainer.classList.remove('h-24');
+                navContainer.classList.remove('h-20', 'sm:h-24');
                 navContainer.classList.add('h-16');
             } else {
                 navbar.classList.remove('bg-[#030303]/90', 'backdrop-blur-xl', 'border-white/5');
                 navbar.classList.add('border-transparent');
-                navContainer.classList.add('h-24');
+                navContainer.classList.add('h-20', 'sm:h-24');
                 navContainer.classList.remove('h-16');
             }
         });
