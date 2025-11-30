@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mithilesh Reddy Portfolio</title>
+    
+    <!-- Favicon: Sleek 'M' Icon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" type="image/png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts: Inter & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        lux: {
+                            black: '#030303',
+                            charcoal: '#0a0a0a',
+                            glass: 'rgba(255, 255, 255, 0.03)',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            teal: '#00E6E6',
+                            pink: '#FF00CC',
+                            gold: '#D4AF37',
+                            silver: '#C0C0C0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-lux': 'linear-gradient(135deg, rgba(0,230,230,0.1) 0%, rgba(255,0,204,0.1) 100%)',
+                        'gradient-text': 'linear-gradient(to right, #00E6E6, #FF00CC)',
+                        'gradient-metallic': 'linear-gradient(145deg, #1a1a1a, #0a0a0a)',
+                    },
+                    boxShadow: {
+                        'glow-teal': '0 0 30px rgba(0, 230, 230, 0.2)',
+                        'glow-pink': '0 0 30px rgba(255, 0, 204, 0.2)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Global Reset & Scrollbar */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030303;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #00E6E6, #FF00CC);
+            border-radius: 4px;
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 230, 230, 0.3);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-card:hover .icon-glow {
+            color: #00E6E6;
+            text-shadow: 0 0 15px rgba(0, 230, 230, 0.5);
+        }
+
+        /* Text Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #00E6E6, #FF00CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Nav Link Hover */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background: #FF00CC;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Timeline Specifics */
+        .timeline-line {
+            background: linear-gradient(to bottom, transparent, #00E6E6, #FF00CC, transparent);
+        }
+        
+        /* Mobile fixes */
+        @media (max-width: 768px) {
+            .mobile-padding {
+                padding-left: 2rem !important; 
+                padding-right: 2rem !important;
+            }
+        }
+
+        /* Loader */
+        .loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #030303;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-lux-black text-gray-300 antialiased selection:bg-lux-teal selection:text-black">
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper" id="loader">
+        <div class="flex flex-col items-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-lux-teal mb-4"></div>
+            <h2 class="font-display font-bold text-xl tracking-[0.3em] text-white">LOADING</h2>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-lux-teal to-lux-pink z-[100] w-0 transition-all duration-100"></div>
+
+    <!-- Background Elements -->
+    <div class="fixed inset-0 z-[-1] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#121212] via-[#030303] to-black"></div>
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand -->
+                <div class="flex-shrink-0 cursor-pointer group">
+                    <a href="#" class="font-display font-black text-2xl tracking-tighter text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-lux-teal group-hover:to-lux-pink transition-all duration-500">
+                        MITHILESH<span class="text-lux-teal group-hover:text-lux-pink">.</span>REDDY
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="nav-link text-sm uppercase tracking-widest font-semibold hover:text-white transition-colors">About</a>
+                        <a href="#skills" class="nav-link text-sm uppercase tracking-widest font-semibold hover:text-white transition-colors">Skills</a>
+                        <a href="#projects" class="nav-link text-sm uppercase tracking-widest font-semibold hover:text-white transition-colors">Projects</a>
+                        <a href="#experience" class="nav-link text-sm uppercase tracking-widest font-semibold hover:text-white transition-colors">Experience</a>
+                        <a href="#education" class="nav-link text-sm uppercase tracking-widest font-semibold hover:text-white transition-colors">Education</a>
+                        <a href="#contact" class="px-6 py-2 rounded-full border border-lux-teal/30 text-lux-teal text-xs font-bold uppercase tracking-widest hover:bg-lux-teal hover:text-black transition-all duration-300 shadow-[0_0_15px_rgba(0,230,230,0.1)] hover:shadow-[0_0_25px_rgba(0,230,230,0.4)]">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" id="mobile-menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden glass-panel border-t border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lux-teal uppercase tracking-widest">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lux-teal uppercase tracking-widest">Skills</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lux-teal uppercase tracking-widest">Projects</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lux-teal uppercase tracking-widest">Experience</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-lux-teal uppercase tracking-widest">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-lux-pink hover:text-white uppercase tracking-widest">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Abstract Background Glows -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-lux-teal/20 rounded-full blur-[128px] animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-lux-pink/20 rounded-full blur-[128px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+            <p class="text-lux-teal font-display font-bold tracking-[0.3em] text-sm md:text-base mb-6 animate-float" data-aos="fade-down" data-aos-delay="200">INNOVATION · INTELLIGENCE · IMPACT</p>
+            
+            <h1 class="text-6xl md:text-8xl lg:text-9xl font-display font-black tracking-tight text-white mb-6 leading-tight" data-aos="zoom-in" data-aos-duration="1200">
+                MITHILESH <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-lux-teal via-white to-lux-pink opacity-90">REDDY</span>
+            </h1>
+            
+            <div class="h-1 w-24 bg-gradient-to-r from-lux-teal to-lux-pink mx-auto mb-8 rounded-full"></div>
+
+            <p class="text-lg md:text-2xl text-gray-400 font-light max-w-3xl mx-auto mb-12 leading-relaxed" data-aos="fade-up" data-aos-delay="400">
+                Full-Stack Developer | Machine Learning Enthusiast | AI Innovator
+            </p>
+
+            <!-- Premium Social Links -->
+            <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="600">
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-lux-teal hover:border-lux-teal hover:text-black transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(0,230,230,0.5)]">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://github.com/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+                <a href="https://www.hackerrank.com/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#2EC866] hover:border-[#2EC866] hover:text-black transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-hackerrank text-xl"></i>
+                </a>
+                <a href="https://www.kaggle.com/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#20BEFF] hover:border-[#20BEFF] hover:text-black transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-kaggle text-xl"></i>
+                </a>
+                <a href="https://dev.to/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-black hover:border-white hover:text-white transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-dev text-xl"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/22153158/mithilesh-reddy" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#F48024] hover:border-[#F48024] hover:text-black transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-stack-overflow text-xl"></i>
+                </a>
+                <a href="https://www.reddit.com/user/mithilreddy369" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5 text-white hover:bg-[#FF4500] hover:border-[#FF4500] hover:text-black transition-all duration-300 hover:scale-110">
+                    <i class="fab fa-reddit text-xl"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="text-white/50 hover:text-lux-teal transition-colors">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="glass-panel p-8 md:p-16 rounded-3xl relative overflow-hidden" data-aos="fade-up">
+                <!-- Decorative Accent -->
+                <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-lux-teal/10 to-transparent rounded-bl-full"></div>
+                
+                <div class="text-center relative z-10">
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-10 tracking-wider">ABOUT <span class="text-gradient">ME</span></h2>
+                    <p class="text-lg md:text-xl text-gray-300 leading-loose font-light max-w-4xl mx-auto">
+                        I am a <span class="text-white font-semibold">Master of Technology</span> student specializing in Computer Science with a strong passion for programming, technology, and innovation. Proficient in programming languages, web development, and cloud technologies, with hands-on experience in machine learning and application development. I thrive on creating innovative solutions that address real-world problems while continuously learning and evolving in the ever-changing tech industry. I am committed to contributing to challenging roles while driving professional and technical growth.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-lux-charcoal/30 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20" data-aos="fade-up">
+                <p class="text-lux-pink font-display font-bold tracking-[0.2em] text-sm mb-4">TECHNOLOGY STACK</p>
+                <h2 class="text-4xl md:text-6xl font-display font-black text-white">MY SKILLS</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Skill Card 1 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-code text-4xl text-gray-500 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-teal/50 group-hover:text-lux-teal">CODE</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Programming Languages</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">Python, C, JavaScript, Java</p>
+                </div>
+
+                <!-- Skill Card 2 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-globe text-4xl text-gray-500 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-pink/50 group-hover:text-lux-pink">WEB</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Web Development</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">HTML, CSS, React, RESTful APIs, Bootstrap, Node.js, Express.js, Tailwind CSS</p>
+                </div>
+
+                <!-- Skill Card 3 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-database text-4xl text-gray-500 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-teal/50 group-hover:text-lux-teal">DATA</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Database Management</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">MySQL, MongoDB</p>
+                </div>
+
+                <!-- Skill Card 4 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-cloud text-4xl text-gray-500 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-pink/50 group-hover:text-lux-pink">AWS</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Cloud Development</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">AWS, Firebase, EC2, Amplify, S3 buckets, Route 53</p>
+                </div>
+
+                <!-- Skill Card 5 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-chart-line text-4xl text-gray-500 group-hover:text-lux-teal transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-teal/50 group-hover:text-lux-teal">AI/ML</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Data Science & ML</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn</p>
+                </div>
+
+                <!-- Skill Card 6 -->
+                <div class="glass-card rounded-2xl p-8 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-center justify-between mb-6">
+                        <i class="fas fa-tools text-4xl text-gray-500 group-hover:text-lux-pink transition-colors duration-300 icon-glow"></i>
+                        <span class="text-xs font-mono text-gray-600 border border-gray-700 px-2 py-1 rounded group-hover:border-lux-pink/50 group-hover:text-lux-pink">DEVOPS</span>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-4">Tools & Platforms</h3>
+                    <p class="text-gray-400 leading-relaxed group-hover:text-gray-200 transition-colors">Linux, Windows, Jenkins, Git, GitLab, Figma, Unity</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 border-b border-white/10 pb-6" data-aos="fade-right">
+                <div>
+                    <p class="text-lux-teal font-display font-bold tracking-[0.2em] text-sm mb-2">PORTFOLIO</p>
+                    <h2 class="text-4xl md:text-6xl font-display font-black text-white">PROJECT SHOWCASE</h2>
+                </div>
+                <div class="mt-6 md:mt-0 text-gray-500 italic">Exploring Innovation</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-teal/30" data-aos="fade-up">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-teal uppercase tracking-widest">Machine Learning</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Heart Disease Prediction</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">A Stacked Ensemble Model with SMOTE to predict heart disease, increasing accuracy to 98.5% and F1-Score of 98.52%.</p>
+                        <a href="https://github.com/mithilreddy369/Heart-Disease-Prediction" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-teal transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-pink/30" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-pink uppercase tracking-widest">Web Game</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Tic-Tac-Toe Web Game</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">Developed and deployed a dynamic Tic-Tac-Toe game with an engaging UI using HTML, CSS, and JS, hosted on Firebase.</p>
+                        <a href="https://github.com/mithilreddy369/Tic-Tac-Toe-Web-Game" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-pink transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-teal/30" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-teal uppercase tracking-widest">Web Development</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Snake Game</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">A classic Snake Game built with HTML, CSS, and JavaScript, tracking score, high score, and games played using localStorage.</p>
+                        <a href="https://github.com/mithilreddy369/snake-game" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-teal transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-pink/30" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-pink uppercase tracking-widest">VR / AR</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Immersive Google Classroom</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">Created an interactive VR PPT navigation system with gaze control using Unity and Google Cardboard SDK for enhanced learning.</p>
+                        <a href="https://github.com/mithilreddy369/Immersive-Google-Classroom" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-pink transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-teal/30" data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-teal uppercase tracking-widest">Software Engineering</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-teal transition-colors">Bank App Python</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">A Python bank app using OOP concepts like Encapsulation, Inheritance, Abstraction, and Polymorphism for account management.</p>
+                        <a href="https://github.com/mithilreddy369/Bank-App-Python" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-teal transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="group relative bg-[#0a0a0a] rounded-xl overflow-hidden border border-white/5 transition-all hover:border-lux-pink/30" data-aos="fade-up" data-aos-delay="500">
+                    <div class="p-8 h-full flex flex-col">
+                        <div class="mb-4">
+                            <span class="text-xs font-bold text-lux-pink uppercase tracking-widest">Cybersecurity</span>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white mb-4 group-hover:text-lux-pink transition-colors">Image Steganography</h3>
+                        <p class="text-gray-400 mb-8 flex-grow">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using password.</p>
+                        <a href="https://github.com/mithilreddy369/Image-Steganography" target="_blank" class="inline-flex items-center space-x-2 text-white font-semibold hover:text-lux-pink transition-colors group-hover:translate-x-2 duration-300">
+                            <span>View Project</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-[#0a0a0a] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-16 tracking-wide" data-aos="fade-up">PROFESSIONAL <span class="text-lux-teal">EXPERIENCE</span></h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Exp 1 -->
+                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-teal hover:bg-white/5 transition-all duration-300" data-aos="fade-right">
+                    <div class="absolute top-6 right-6 text-6xl text-lux-teal/10 font-black z-0 select-none">01</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">Cyber Security Internship</h3>
+                        <p class="text-lux-teal font-medium mb-1 text-lg">Edunet Foundation</p>
+                        <p class="text-gray-500 text-xs font-bold mb-6 uppercase tracking-widest border border-white/10 inline-block px-2 py-1 rounded">Jan 2025 - Feb 2025</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-shield-alt text-lux-teal mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Gained expertise in network security, encryption, and ethical hacking through the SkillsBuild Program.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lock text-lux-teal mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using a password.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-user-shield text-lux-teal mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Acquired experience in data protection, threat mitigation, and ethical practices to safeguard sensitive information.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-pink hover:bg-white/5 transition-all duration-300" data-aos="fade-left">
+                    <div class="absolute top-6 right-6 text-6xl text-lux-pink/10 font-black z-0 select-none">02</div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">Foundations of AI Internship</h3>
+                        <p class="text-lux-pink font-medium mb-1 text-lg">Microsoft & Edunet</p>
+                        <p class="text-gray-500 text-xs font-bold mb-6 uppercase tracking-widest border border-white/10 inline-block px-2 py-1 rounded">April 2025 - May 2025</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-brain text-lux-pink mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Learned and demonstrated AI and Cloud skills to enhance employability and boost confidence in emerging technologies.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-cloud text-lux-pink mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Gained access to curated learning content through Microsoft Learn and the LMS Portal.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chalkboard-teacher text-lux-pink mt-1.5 mr-3 text-sm"></i>
+                                <span class="text-gray-300 leading-relaxed">Participated in interactive masterclasses led by industry experts.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section (LEGENDARY UPGRADE) -->
+    <section id="education" class="py-24 px-4 md:px-6 relative overflow-hidden bg-gradient-to-b from-[#030303] to-[#0a0a0a]">
+        
+        <div class="max-w-6xl mx-auto relative z-10">
+            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-20 tracking-wide" data-aos="fade-down">
+                ACADEMIC <span class="text-lux-teal">JOURNEY</span>
+            </h2>
+
+            <div class="relative">
+                <!-- Center Line (Desktop) / Left Line (Mobile) -->
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 md:w-0.5 bg-gradient-to-b from-lux-teal via-lux-pink to-lux-teal rounded-full shadow-[0_0_15px_rgba(0,230,230,0.5)] z-0"></div>
+
+                <!-- Timeline Item 1 -->
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
+                    <div class="hidden md:block w-5/12"></div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-lux-teal border-4 border-black z-20 shadow-[0_0_15px_#00E6E6] mt-6 md:mt-0"></div>
+
+                    <!-- Content Card (Right on Desktop) -->
+                    <div class="w-full md:w-5/12 pl-12 md:pl-12">
+                        <div class="glass-card p-8 rounded-2xl border-l-4 border-lux-teal relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
+                            <div class="absolute top-0 right-0 w-24 h-24 bg-lux-teal/10 rounded-bl-full group-hover:bg-lux-teal/20 transition-all duration-500"></div>
+                            
+                            <span class="inline-block px-3 py-1 bg-lux-teal/10 text-lux-teal text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-lux-teal/20">2023 - Present</span>
+                            
+                            <h3 class="text-2xl font-display font-bold text-white mb-1">M.Tech (Computer Science)</h3>
+                            <p class="text-gray-400 font-medium mb-4 flex items-center">
+                                <i class="fas fa-university mr-2 text-lux-teal"></i> JNTUA College of Engineering
+                            </p>
+                            
+                            <div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+                                <span class="text-gray-500 text-sm">Anantapur</span>
+                                <div class="flex items-center space-x-2">
+                                    <i class="fas fa-star text-lux-gold text-sm animate-pulse"></i>
+                                    <span class="text-white font-bold text-lg">8.06 CGPA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
+                    <!-- Content Card (Left on Desktop) -->
+                    <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-12 md:text-right">
+                        <div class="glass-card p-8 rounded-2xl border-l-4 md:border-l-0 md:border-r-4 border-lux-pink relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
+                            <div class="absolute top-0 right-0 md:right-auto md:left-0 w-24 h-24 bg-lux-pink/10 rounded-bl-full md:rounded-bl-none md:rounded-br-full group-hover:bg-lux-pink/20 transition-all duration-500"></div>
+                            
+                            <span class="inline-block px-3 py-1 bg-lux-pink/10 text-lux-pink text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-lux-pink/20">2018 - 2022</span>
+                            
+                            <h3 class="text-2xl font-display font-bold text-white mb-1">B.Tech (Computer Eng.)</h3>
+                            <p class="text-gray-400 font-medium mb-4 flex items-center md:justify-end">
+                                <i class="fas fa-university mr-2 text-lux-pink md:order-last md:ml-2 md:mr-0"></i> Presidency University
+                            </p>
+                            
+                            <div class="flex items-center justify-between md:flex-row-reverse border-t border-white/10 pt-4 mt-2">
+                                <span class="text-gray-500 text-sm">Bengaluru</span>
+                                <div class="flex items-center space-x-2 md:space-x-reverse">
+                                    <i class="fas fa-star text-lux-gold text-sm"></i>
+                                    <span class="text-white font-bold text-lg">6.34 CGPA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Dot -->
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-lux-pink border-4 border-black z-20 shadow-[0_0_15px_#FF00CC] mt-6 md:mt-0"></div>
+                    
+                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
+                    <div class="hidden md:block w-5/12"></div>
+                    
+                    <!-- Center Dot -->
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gray-500 border-4 border-black z-20 mt-6 md:mt-0"></div>
+
+                    <!-- Content Card (Right on Desktop) -->
+                    <div class="w-full md:w-5/12 pl-12 md:pl-12">
+                        <div class="glass-card p-8 rounded-2xl border-l-4 border-gray-600 relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
+                             <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full group-hover:bg-white/10 transition-all duration-500"></div>
+
+                            <span class="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-white/10">2016 - 2018</span>
+                            
+                            <h3 class="text-2xl font-display font-bold text-white mb-1">Class XII</h3>
+                            <p class="text-gray-400 font-medium mb-4 flex items-center">
+                                <i class="fas fa-school mr-2 text-gray-500"></i> Narayana Junior College
+                            </p>
+                            
+                            <div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+                                <span class="text-gray-500 text-sm">Anantapur</span>
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-white font-bold text-lg">86.66%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="flex flex-col md:flex-row items-center justify-between relative" data-aos="fade-up">
+                    <!-- Content Card (Left on Desktop) -->
+                    <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-12 md:text-right">
+                        <div class="glass-card p-8 rounded-2xl border-l-4 md:border-l-0 md:border-r-4 border-gray-600 relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
+                            <div class="absolute top-0 right-0 md:right-auto md:left-0 w-24 h-24 bg-white/5 rounded-bl-full md:rounded-bl-none md:rounded-br-full group-hover:bg-white/10 transition-all duration-500"></div>
+
+                            <span class="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-white/10">2015 - 2016</span>
+                            
+                            <h3 class="text-2xl font-display font-bold text-white mb-1">Class X</h3>
+                            <p class="text-gray-400 font-medium mb-4 flex items-center md:justify-end">
+                                <i class="fas fa-school mr-2 text-gray-500 md:order-last md:ml-2 md:mr-0"></i> Montessori Indus School
+                            </p>
+                            
+                            <div class="flex items-center justify-between md:flex-row-reverse border-t border-white/10 pt-4 mt-2">
+                                <span class="text-gray-500 text-sm">Kurnool</span>
+                                <div class="flex items-center space-x-2 md:space-x-reverse">
+                                    <span class="text-white font-bold text-lg">8.5 CGPA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Center Dot -->
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gray-500 border-4 border-black z-20 mt-6 md:mt-0"></div>
+                    
+                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 bg-lux-charcoal/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-6" data-aos="fade-up">CREDENTIALS</h2>
+            <p class="text-gray-400 text-center max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">Validated expertise through industry-recognized certifications.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cert Card Template -->
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-certificate text-lux-teal text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">Software Engineer Certificate</h4>
+                    <p class="text-gray-500 text-sm mb-4">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/bde31d35c2a0" target="_blank" class="text-xs text-lux-teal uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="50">
+                    <i class="fas fa-database text-lux-pink text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">SQL (Advanced) Certificate</h4>
+                    <p class="text-gray-500 text-sm mb-4">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/df0fb0eb975b" target="_blank" class="text-xs text-lux-pink uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-js text-lux-teal text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">JavaScript (Intermediate)</h4>
+                    <p class="text-gray-500 text-sm mb-4">HackerRank</p>
+                    <a href="https://www.hackerrank.com/certificates/e541da303693" target="_blank" class="text-xs text-lux-teal uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="150">
+                    <i class="fab fa-python text-lux-pink text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">Python Essentials 1</h4>
+                    <p class="text-gray-500 text-sm mb-4">Cisco</p>
+                    <a href="https://www.credly.com/badges/34f6cdcb-a107-4f56-9247-76f5f66bf14f/linked_in_profile" target="_blank" class="text-xs text-lux-pink uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-robot text-lux-teal text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">ChatGPT Prompt Engineering</h4>
+                    <p class="text-gray-500 text-sm mb-4">DeepLearning.AI</p>
+                    <a href="https://learn.deeplearning.ai/accomplishments/13d6f919-0a69-4cc3-8eb8-3fce99ffc503?usp=sharing" target="_blank" class="text-xs text-lux-teal uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="250">
+                    <i class="fas fa-laptop-code text-lux-pink text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">Responsive Web Design</h4>
+                    <p class="text-gray-500 text-sm mb-4">freeCodeCamp</p>
+                    <a href="https://freecodecamp.org/certification/mithilreddy369/responsive-web-design" target="_blank" class="text-xs text-lux-pink uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-chart-pie text-lux-teal text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">Applied Data Science with Python</h4>
+                    <p class="text-gray-500 text-sm mb-4">IBM</p>
+                    <a href="https://www.credly.com/badges/f39792ee-5bd5-48b3-b787-a49bfc842f87/linked_in_profile" target="_blank" class="text-xs text-lux-teal uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink/50 hover:bg-white/5 transition-all" data-aos="zoom-in" data-aos-delay="350">
+                    <i class="fas fa-brain text-lux-pink text-3xl mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2 leading-tight">Machine Learning with Python</h4>
+                    <p class="text-gray-500 text-sm mb-4">IBM</p>
+                    <a href="https://www.credly.com/badges/69196b29-ac8d-4ddd-aa0a-be3eafc2f8e2" target="_blank" class="text-xs text-lux-pink uppercase font-bold tracking-wider hover:text-white transition-colors">Verify Credential &rarr;</a>
+                </div>
+            </div>
+            
+            <!-- Extra certs hidden or view more logic could go here, keeping layout clean -->
+            <div class="text-center mt-10">
+                 <p class="text-gray-500 text-xs uppercase tracking-widest">And more...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="py-24 px-6 bg-[#030303]">
+        <div class="max-w-5xl mx-auto">
+             <div class="glass-panel p-10 rounded-3xl border border-white/10" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-display font-bold text-white text-center mb-10">KEY ACHIEVEMENTS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="p-4">
+                        <i class="fas fa-trophy text-4xl text-lux-gold mb-4 animate-pulse-slow"></i>
+                        <p class="text-gray-300 leading-relaxed">Achieved an accuracy of <span class="text-white font-bold">98.5%</span> in a machine learning project, demonstrating high prediction reliability.</p>
+                    </div>
+                    <div class="p-4 border-l-0 md:border-l border-r-0 md:border-r border-white/10">
+                        <i class="fas fa-users text-4xl text-lux-teal mb-4"></i>
+                        <p class="text-gray-300 leading-relaxed">Led a university project team to successful completion, fostering strong team collaboration and meeting deadlines.</p>
+                    </div>
+                    <div class="p-4">
+                        <i class="fas fa-heart text-4xl text-lux-pink mb-4"></i>
+                        <p class="text-gray-300 leading-relaxed">Coordinated donations to aid underprivileged groups, creating a positive impact within the community.</p>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-white text-center mb-12 uppercase tracking-widest">Core Interests</h2>
+            <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up">
+                <div class="px-8 py-4 glass-card rounded-full flex items-center space-x-3 hover:bg-white/10 cursor-default">
+                    <i class="fas fa-lightbulb text-lux-teal"></i>
+                    <span class="text-white font-medium">Exploring Tech</span>
+                </div>
+                <div class="px-8 py-4 glass-card rounded-full flex items-center space-x-3 hover:bg-white/10 cursor-default">
+                    <i class="fas fa-shield-alt text-lux-pink"></i>
+                    <span class="text-white font-medium">Cybersecurity</span>
+                </div>
+                <div class="px-8 py-4 glass-card rounded-full flex items-center space-x-3 hover:bg-white/10 cursor-default">
+                    <i class="fas fa-robot text-lux-teal"></i>
+                    <span class="text-white font-medium">Automation</span>
+                </div>
+                <div class="px-8 py-4 glass-card rounded-full flex items-center space-x-3 hover:bg-white/10 cursor-default">
+                    <i class="fas fa-link text-lux-pink"></i>
+                    <span class="text-white font-medium">Blockchain</span>
+                </div>
+                <div class="px-8 py-4 glass-card rounded-full flex items-center space-x-3 hover:bg-white/10 cursor-default">
+                    <i class="fas fa-bitcoin-sign text-lux-gold"></i>
+                    <span class="text-white font-medium">Cryptocurrency</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 relative bg-gradient-to-t from-black to-[#0a0a0a]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl md:text-7xl font-display font-black text-white mb-8" data-aos="zoom-in">LET'S CONNECT</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">I'm always open to new opportunities and collaborations. Ready to build something extraordinary?</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6" data-aos="fade-up">
+                <a href="mailto:s.mithilesh.reddi@gmail.com" class="group relative px-10 py-5 bg-white text-black font-bold text-lg rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.4)]">
+                    <span class="relative z-10 flex items-center">
+                        <i class="fas fa-envelope mr-3"></i> EMAIL ME
+                    </span>
+                    <div class="absolute inset-0 bg-lux-teal transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/mithilreddy369" target="_blank" class="group relative px-10 py-5 bg-transparent border border-white/30 text-white font-bold text-lg rounded-full overflow-hidden transition-all hover:border-white hover:scale-105">
+                    <span class="relative z-10 flex items-center">
+                        <i class="fab fa-linkedin-in mr-3"></i> LINKEDIN
+                    </span>
+                    <div class="absolute inset-0 bg-lux-pink/20 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom duration-300"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-black border-t border-white/5 text-center">
+        <p class="text-gray-600 text-sm font-medium tracking-widest uppercase">&copy; 2025 Mithilesh Reddy. Crafted with Precision.</p>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 w-12 h-12 bg-white/10 backdrop-blur-md rounded-full text-white flex items-center justify-center opacity-0 transition-all duration-500 hover:bg-lux-teal hover:text-black hover:scale-110 z-40 border border-white/10">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Init AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('loader-hidden');
+            }, 800);
+        });
+
+        // Particles.js Config (Refined, Subtle)
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": ["#ffffff", "#00E6E6", "#FF00CC"] },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.3, "random": true, "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.1 } },
+                "size": { "value": 2, "random": true },
+                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.1, "width": 1 },
+                "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "out_mode": "out" }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.5 } } }
+            },
+            "retina_detect": true
+        });
+
+        // Navbar Logic
+        const navbar = document.getElementById('navbar');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-black/80', 'backdrop-blur-lg', 'shadow-lg', 'border-b', 'border-white/5');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-black/80', 'backdrop-blur-lg', 'shadow-lg', 'border-b', 'border-white/5');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth Scroll for Anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                mobileMenu.classList.add('hidden'); // Close mobile menu on click
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+            
+            // Back to top visibility
+            const backToTop = document.getElementById('back-to-top');
+            if (winScroll > 500) {
+                backToTop.classList.remove('opacity-0');
+            } else {
+                backToTop.classList.add('opacity-0');
+            }
+        });
+
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
