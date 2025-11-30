@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mithilesh Reddy Portfolio</title>
-    
-    <!-- Favicon: Sleek 'M' Icon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" type="image/png">
+    <title>Mithilesh Reddy | Premium Portfolio</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,8 +46,8 @@
                         'gradient-metallic': 'linear-gradient(145deg, #1a1a1a, #0a0a0a)',
                     },
                     boxShadow: {
-                        'glow-teal': '0 0 30px rgba(0, 230, 230, 0.2)',
-                        'glow-pink': '0 0 30px rgba(255, 0, 204, 0.2)',
+                        'glow-teal': '0 0 20px rgba(0, 230, 230, 0.15)',
+                        'glow-pink': '0 0 20px rgba(255, 0, 204, 0.15)',
                         'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
                     },
                     animation: {
@@ -69,12 +66,7 @@
     </script>
 
     <style>
-        /* Global Reset & Scrollbar */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-        
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -120,7 +112,31 @@
             background-clip: text;
         }
 
-        /* Nav Link Hover */
+        /* Animated Border for Sections */
+        .section-divider::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #00E6E6, #FF00CC);
+            border-radius: 3px;
+        }
+
+        /* Particle Container */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Navigation Link Hover */
         .nav-link {
             position: relative;
         }
@@ -136,19 +152,6 @@
         }
         .nav-link:hover::after {
             width: 100%;
-        }
-
-        /* Timeline Specifics */
-        .timeline-line {
-            background: linear-gradient(to bottom, transparent, #00E6E6, #FF00CC, transparent);
-        }
-        
-        /* Mobile fixes */
-        @media (max-width: 768px) {
-            .mobile-padding {
-                padding-left: 2rem !important; 
-                padding-right: 2rem !important;
-            }
         }
 
         /* Loader */
@@ -168,6 +171,11 @@
         .loader-hidden {
             opacity: 0;
             visibility: hidden;
+        }
+        
+        /* Layout Fixes */
+        body {
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -489,48 +497,56 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 <!-- Exp 1 -->
-                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-teal hover:bg-white/5 transition-all duration-300" data-aos="fade-right">
-                    <div class="absolute top-6 right-6 text-6xl text-lux-teal/10 font-black z-0 select-none">01</div>
+                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-teal" data-aos="fade-right">
+                    <div class="absolute top-6 right-6 text-6xl text-lux-teal/10 font-black z-0">01</div>
                     <div class="relative z-10">
                         <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">Cyber Security Internship</h3>
-                        <p class="text-lux-teal font-medium mb-1 text-lg">Edunet Foundation</p>
-                        <p class="text-gray-500 text-xs font-bold mb-6 uppercase tracking-widest border border-white/10 inline-block px-2 py-1 rounded">Jan 2025 - Feb 2025</p>
-                        <ul class="space-y-4">
+                        <p class="text-lux-teal font-medium mb-1">Edunet Foundation (AICTE Collaboration)</p>
+                        <p class="text-gray-500 text-sm mb-6 uppercase tracking-wider">Jan 2025 - Feb 2025</p>
+                        <ul class="space-y-3">
                             <li class="flex items-start">
-                                <i class="fas fa-shield-alt text-lux-teal mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Gained expertise in network security, encryption, and ethical hacking through the SkillsBuild Program.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Gained expertise in network security, encryption, and ethical hacking through the SkillsBuild Program.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-lock text-lux-teal mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using a password.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Developed a secure image steganography tool to hide and retrieve encrypted messages within images using a password.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-user-shield text-lux-teal mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Acquired experience in data protection, threat mitigation, and ethical practices to safeguard sensitive information.</span>
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Acquired experience in data protection, threat mitigation, and ethical practices to safeguard sensitive information.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-lux-teal mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Participated in weekly mentor-led sessions and completed assigned tasks and milestones.</span>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Exp 2 -->
-                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-pink hover:bg-white/5 transition-all duration-300" data-aos="fade-left">
-                    <div class="absolute top-6 right-6 text-6xl text-lux-pink/10 font-black z-0 select-none">02</div>
+                <div class="glass-panel p-10 rounded-2xl relative border-l-4 border-lux-pink" data-aos="fade-left">
+                    <div class="absolute top-6 right-6 text-6xl text-lux-pink/10 font-black z-0">02</div>
                     <div class="relative z-10">
                         <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-2">Foundations of AI Internship</h3>
-                        <p class="text-lux-pink font-medium mb-1 text-lg">Microsoft & Edunet</p>
-                        <p class="text-gray-500 text-xs font-bold mb-6 uppercase tracking-widest border border-white/10 inline-block px-2 py-1 rounded">April 2025 - May 2025</p>
-                        <ul class="space-y-4">
+                        <p class="text-lux-pink font-medium mb-1">Microsoft initiative, implemented by Edunet Foundation</p>
+                        <p class="text-gray-500 text-sm mb-6 uppercase tracking-wider">April 2025 - May 2025</p>
+                        <ul class="space-y-3">
                             <li class="flex items-start">
-                                <i class="fas fa-brain text-lux-pink mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Learned and demonstrated AI and Cloud skills to enhance employability and boost confidence in emerging technologies.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Learned and demonstrated AI and Cloud skills to enhance employability and boost confidence in emerging technologies.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-cloud text-lux-pink mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Gained access to curated learning content through Microsoft Learn and the LMS Portal.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Gained access to curated learning content through Microsoft Learn and the LMS Portal.</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-chalkboard-teacher text-lux-pink mt-1.5 mr-3 text-sm"></i>
-                                <span class="text-gray-300 leading-relaxed">Participated in interactive masterclasses led by industry experts.</span>
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Participated in interactive masterclasses led by industry experts.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-lux-pink mt-1 mr-3 text-sm"></i>
+                                <span class="text-gray-300">Worked on real-world problem statements with hands-on practice and mentorship.</span>
                             </li>
                         </ul>
                     </div>
@@ -539,136 +555,78 @@
         </div>
     </section>
 
-    <!-- Education Section (LEGENDARY UPGRADE) -->
-    <section id="education" class="py-24 px-4 md:px-6 relative overflow-hidden bg-gradient-to-b from-[#030303] to-[#0a0a0a]">
-        
+    <!-- Education Section -->
+    <section id="education" class="py-24 px-6 relative overflow-hidden">
+        <!-- Background decorative line -->
+        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gray-700 to-transparent hidden md:block"></div>
+
         <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-20 tracking-wide" data-aos="fade-down">
-                ACADEMIC <span class="text-lux-teal">JOURNEY</span>
-            </h2>
+            <h2 class="text-4xl md:text-5xl font-display font-black text-white text-center mb-20" data-aos="fade-up">EDUCATION</h2>
 
-            <div class="relative">
-                <!-- Center Line (Desktop) / Left Line (Mobile) -->
-                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 md:w-0.5 bg-gradient-to-b from-lux-teal via-lux-pink to-lux-teal rounded-full shadow-[0_0_15px_rgba(0,230,230,0.5)] z-0"></div>
-
-                <!-- Timeline Item 1 -->
-                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
+            <div class="space-y-12">
+                <!-- Education Item 1 (Right) -->
+                <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
                     <div class="hidden md:block w-5/12"></div>
-                    
-                    <!-- Center Dot -->
-                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-lux-teal border-4 border-black z-20 shadow-[0_0_15px_#00E6E6] mt-6 md:mt-0"></div>
-
-                    <!-- Content Card (Right on Desktop) -->
-                    <div class="w-full md:w-5/12 pl-12 md:pl-12">
-                        <div class="glass-card p-8 rounded-2xl border-l-4 border-lux-teal relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
-                            <div class="absolute top-0 right-0 w-24 h-24 bg-lux-teal/10 rounded-bl-full group-hover:bg-lux-teal/20 transition-all duration-500"></div>
-                            
-                            <span class="inline-block px-3 py-1 bg-lux-teal/10 text-lux-teal text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-lux-teal/20">2023 - 2025</span>
-                            
-                            <h3 class="text-2xl font-display font-bold text-white mb-1">M.Tech (Computer Science)</h3>
-                            <p class="text-gray-400 font-medium mb-4 flex items-center">
-                                <i class="fas fa-university mr-2 text-lux-teal"></i> JNTUA College of Engineering
-                            </p>
-                            
-                            <div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
-                                <span class="text-gray-500 text-sm">Anantapur</span>
-                                <div class="flex items-center space-x-2">
-                                    <i class="fas fa-star text-lux-gold text-sm animate-pulse"></i>
-                                    <span class="text-white font-bold text-lg">8.28 CGPA</span>
-                                </div>
+                    <div class="w-8 h-8 rounded-full bg-lux-teal border-4 border-black z-20 shadow-[0_0_15px_#00E6E6]"></div>
+                    <div class="w-full md:w-5/12 pl-0 md:pl-10 text-center md:text-left mt-4 md:mt-0">
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-lux-teal">
+                            <h4 class="text-xl font-bold text-white">M.Tech (Computer Science)</h4>
+                            <p class="text-lux-teal font-medium">JNTUA College of Engineering, Anantapur</p>
+                            <div class="flex justify-between items-center mt-4 text-sm text-gray-400">
+                                <span>Oct 2023 - Oct 2023</span>
+                                <span class="font-bold text-white bg-white/10 px-2 py-1 rounded">8.28 CGPA</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Timeline Item 2 -->
-                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
-                    <!-- Content Card (Left on Desktop) -->
-                    <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-12 md:text-right">
-                        <div class="glass-card p-8 rounded-2xl border-l-4 md:border-l-0 md:border-r-4 border-lux-pink relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
-                            <div class="absolute top-0 right-0 md:right-auto md:left-0 w-24 h-24 bg-lux-pink/10 rounded-bl-full md:rounded-bl-none md:rounded-br-full group-hover:bg-lux-pink/20 transition-all duration-500"></div>
-                            
-                            <span class="inline-block px-3 py-1 bg-lux-pink/10 text-lux-pink text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-lux-pink/20">2018 - 2022</span>
-                            
-                            <h3 class="text-2xl font-display font-bold text-white mb-1">B.Tech (Computer Eng.)</h3>
-                            <p class="text-gray-400 font-medium mb-4 flex items-center md:justify-end">
-                                <i class="fas fa-university mr-2 text-lux-pink md:order-last md:ml-2 md:mr-0"></i> Presidency University
-                            </p>
-                            
-                            <div class="flex items-center justify-between md:flex-row-reverse border-t border-white/10 pt-4 mt-2">
-                                <span class="text-gray-500 text-sm">Bengaluru</span>
-                                <div class="flex items-center space-x-2 md:space-x-reverse">
-                                    <i class="fas fa-star text-lux-gold text-sm"></i>
-                                    <span class="text-white font-bold text-lg">6.34 CGPA</span>
-                                </div>
+                <!-- Education Item 2 (Left) -->
+                <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
+                    <div class="w-full md:w-5/12 pr-0 md:pr-10 text-center md:text-right mt-4 md:mt-0 order-3 md:order-1">
+                        <div class="glass-card p-6 rounded-xl border-r-0 md:border-r-4 border-l-4 md:border-l-0 border-lux-pink">
+                            <h4 class="text-xl font-bold text-white">B.Tech (Computer Engineering)</h4>
+                            <p class="text-lux-pink font-medium">Presidency University, Bengaluru</p>
+                            <div class="flex justify-between items-center mt-4 text-sm text-gray-400">
+                                <span>Aug 2018 - Jun 2022</span>
+                                <span class="font-bold text-white bg-white/10 px-2 py-1 rounded">6.34 CGPA</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Center Dot -->
-                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-lux-pink border-4 border-black z-20 shadow-[0_0_15px_#FF00CC] mt-6 md:mt-0"></div>
-                    
-                    <div class="hidden md:block w-5/12"></div>
+                    <div class="w-8 h-8 rounded-full bg-lux-pink border-4 border-black z-20 shadow-[0_0_15px_#FF00CC] order-2"></div>
+                    <div class="hidden md:block w-5/12 order-3"></div>
                 </div>
 
-                <!-- Timeline Item 3 -->
-                <div class="flex flex-col md:flex-row items-center justify-between mb-16 relative" data-aos="fade-up">
+                <!-- Education Item 3 (Right) -->
+                <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
                     <div class="hidden md:block w-5/12"></div>
-                    
-                    <!-- Center Dot -->
-                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gray-500 border-4 border-black z-20 mt-6 md:mt-0"></div>
-
-                    <!-- Content Card (Right on Desktop) -->
-                    <div class="w-full md:w-5/12 pl-12 md:pl-12">
-                        <div class="glass-card p-8 rounded-2xl border-l-4 border-gray-600 relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
-                             <div class="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full group-hover:bg-white/10 transition-all duration-500"></div>
-
-                            <span class="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-white/10">2016 - 2018</span>
-                            
-                            <h3 class="text-2xl font-display font-bold text-white mb-1">Class XII</h3>
-                            <p class="text-gray-400 font-medium mb-4 flex items-center">
-                                <i class="fas fa-school mr-2 text-gray-500"></i> Narayana Junior College
-                            </p>
-                            
-                            <div class="flex items-center justify-between border-t border-white/10 pt-4 mt-2">
-                                <span class="text-gray-500 text-sm">Anantapur</span>
-                                <div class="flex items-center space-x-2">
-                                    <span class="text-white font-bold text-lg">86.66%</span>
-                                </div>
+                    <div class="w-8 h-8 rounded-full bg-gray-600 border-4 border-black z-20"></div>
+                    <div class="w-full md:w-5/12 pl-0 md:pl-10 text-center md:text-left mt-4 md:mt-0">
+                        <div class="glass-card p-6 rounded-xl border-l-4 border-gray-600">
+                            <h4 class="text-xl font-bold text-white">Class XII</h4>
+                            <p class="text-gray-400 font-medium">Narayana Junior College, Anantapur</p>
+                            <div class="flex justify-between items-center mt-4 text-sm text-gray-500">
+                                <span>Jun 2016 - Apr 2018</span>
+                                <span class="font-bold text-gray-300 bg-white/5 px-2 py-1 rounded">86.66%</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Timeline Item 4 -->
-                <div class="flex flex-col md:flex-row items-center justify-between relative" data-aos="fade-up">
-                    <!-- Content Card (Left on Desktop) -->
-                    <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-12 md:text-right">
-                        <div class="glass-card p-8 rounded-2xl border-l-4 md:border-l-0 md:border-r-4 border-gray-600 relative overflow-hidden group hover:bg-white/5 transition-all duration-500">
-                            <div class="absolute top-0 right-0 md:right-auto md:left-0 w-24 h-24 bg-white/5 rounded-bl-full md:rounded-bl-none md:rounded-br-full group-hover:bg-white/10 transition-all duration-500"></div>
-
-                            <span class="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs font-bold uppercase tracking-widest rounded-full mb-4 border border-white/10">2015 - 2016</span>
-                            
-                            <h3 class="text-2xl font-display font-bold text-white mb-1">Class X</h3>
-                            <p class="text-gray-400 font-medium mb-4 flex items-center md:justify-end">
-                                <i class="fas fa-school mr-2 text-gray-500 md:order-last md:ml-2 md:mr-0"></i> Montessori Indus School
-                            </p>
-                            
-                            <div class="flex items-center justify-between md:flex-row-reverse border-t border-white/10 pt-4 mt-2">
-                                <span class="text-gray-500 text-sm">Kurnool</span>
-                                <div class="flex items-center space-x-2 md:space-x-reverse">
-                                    <span class="text-white font-bold text-lg">8.5 CGPA</span>
-                                </div>
+                <!-- Education Item 4 (Left) -->
+                <div class="flex flex-col md:flex-row items-center justify-between" data-aos="fade-up">
+                    <div class="w-full md:w-5/12 pr-0 md:pr-10 text-center md:text-right mt-4 md:mt-0 order-3 md:order-1">
+                        <div class="glass-card p-6 rounded-xl border-r-0 md:border-r-4 border-l-4 md:border-l-0 border-gray-600">
+                            <h4 class="text-xl font-bold text-white">Class X</h4>
+                            <p class="text-gray-400 font-medium">Montessori Indus School, Kurnool</p>
+                            <div class="flex justify-between items-center mt-4 text-sm text-gray-500">
+                                <span>Jun 2015 - May 2016</span>
+                                <span class="font-bold text-gray-300 bg-white/5 px-2 py-1 rounded">8.5 CGPA</span>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Center Dot -->
-                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-gray-500 border-4 border-black z-20 mt-6 md:mt-0"></div>
-                    
-                    <div class="hidden md:block w-5/12"></div>
+                    <div class="w-8 h-8 rounded-full bg-gray-600 border-4 border-black z-20 order-2"></div>
+                    <div class="hidden md:block w-5/12 order-3"></div>
                 </div>
-
             </div>
         </div>
     </section>
