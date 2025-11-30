@@ -543,117 +543,70 @@
         </div>
     </section>
 
-    <!-- Education Section (Redesigned for Mobile) -->
-    <section id="education" class="py-16 md:py-32 px-4 md:px-6 relative overflow-hidden">
-        <!-- Background decorative line (visible on desktop only) -->
-        <div class="absolute left-1/2 top-32 bottom-32 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent hidden md:block"></div>
+    <!-- Education Section (Redesigned Compact Layout) -->
+    <section id="education" class="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h2 class="text-3xl md:text-5xl font-display font-black text-white text-center mb-10 md:mb-16" data-aos="fade-up">EDUCATION</h2>
 
-        <div class="max-w-6xl mx-auto relative z-10">
-            <h2 class="text-3xl md:text-5xl font-display font-black text-white text-center mb-10 md:mb-24" data-aos="fade-up">EDUCATION</h2>
-
-            <!-- Mobile Grid View (Hidden on MD+) -->
-            <div class="grid grid-cols-1 xs:grid-cols-2 gap-4 md:hidden" data-aos="fade-up">
-                <div class="glass-card p-5 rounded-xl border-t-2 border-lux-teal bg-white/5">
-                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Oct 2023 - Present</span>
-                    <h4 class="text-sm font-bold text-white mb-0.5">M.Tech (CS)</h4>
-                    <p class="text-lux-teal font-medium text-[10px] mb-2">JNTUA College of Engg.</p>
-                    <div class="inline-block bg-lux-teal/10 border border-lux-teal/20 px-2 py-0.5 rounded text-[10px] font-bold text-lux-teal">
-                        8.28 CGPA
+            <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6" data-aos="fade-up">
+                <!-- Education Item 1 -->
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-teal bg-white/5 hover:bg-white/10 transition-all group flex flex-col h-full">
+                    <div class="mb-4">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Oct 2023 - Present</span>
+                        <div class="h-1 w-10 bg-lux-teal rounded-full"></div>
                     </div>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl border-t-2 border-lux-pink bg-white/5">
-                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Aug 2018 - Jun 2022</span>
-                    <h4 class="text-sm font-bold text-white mb-0.5">B.Tech (Comp. Engg)</h4>
-                    <p class="text-lux-pink font-medium text-[10px] mb-2">Presidency University</p>
-                    <div class="inline-block bg-lux-pink/10 border border-lux-pink/20 px-2 py-0.5 rounded text-[10px] font-bold text-lux-pink">
-                        6.34 CGPA
-                    </div>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl border-t-2 border-gray-600 bg-white/5">
-                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Jun 2016 - Apr 2018</span>
-                    <h4 class="text-sm font-bold text-white mb-0.5">Class XII</h4>
-                    <p class="text-gray-400 font-medium text-[10px] mb-2">Narayana Jr College</p>
-                    <div class="inline-block bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] font-bold text-gray-300">
-                        86.66%
-                    </div>
-                </div>
-
-                <div class="glass-card p-5 rounded-xl border-t-2 border-gray-600 bg-white/5">
-                    <span class="text-[10px] font-bold text-gray-500 mb-1 block uppercase">Jun 2015 - May 2016</span>
-                    <h4 class="text-sm font-bold text-white mb-0.5">Class X</h4>
-                    <p class="text-gray-400 font-medium text-[10px] mb-2">Montessori Indus School</p>
-                    <div class="inline-block bg-white/5 border border-white/10 px-2 py-0.5 rounded text-[10px] font-bold text-gray-300">
-                        8.5 CGPA
-                    </div>
-                </div>
-            </div>
-
-            <!-- Desktop Timeline View (Hidden on Mobile) -->
-            <div class="hidden md:block space-y-12">
-                <!-- Education Item 1 (Right) -->
-                <div class="flex flex-col md:flex-row items-center justify-between group" data-aos="fade-up">
-                    <div class="hidden md:block w-5/12"></div>
-                    <div class="hidden md:block w-4 h-4 rounded-full bg-lux-teal border-[3px] border-[#030303] z-20 shadow-[0_0_15px_#00E6E6] group-hover:scale-150 transition-transform duration-300"></div>
-                    <div class="w-full md:w-5/12 pl-0 md:pl-12">
-                        <div class="glass-card p-8 rounded-xl border-l-2 border-lux-teal hover:bg-white/5 transition-all">
-                            <span class="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-widest">Oct 2023 - Present</span>
-                            <h4 class="text-xl font-bold text-white mb-1">M.Tech (Computer Science)</h4>
-                            <p class="text-lux-teal font-medium text-sm mb-4">JNTUA College of Engineering, Anantapur</p>
-                            <div class="inline-block bg-lux-teal/10 border border-lux-teal/20 px-3 py-1 rounded text-xs font-bold text-lux-teal">
-                                8.28 CGPA
-                            </div>
+                    <h4 class="text-lg font-bold text-white mb-2 leading-tight">M.Tech (CS)</h4>
+                    <p class="text-lux-teal font-medium text-xs mb-4 flex-grow">JNTUA College of Engineering, Anantapur</p>
+                    <div class="mt-auto">
+                        <div class="inline-block bg-lux-teal/10 border border-lux-teal/20 px-3 py-1 rounded text-[10px] font-bold text-lux-teal">
+                            8.28 CGPA
                         </div>
                     </div>
                 </div>
 
-                <!-- Education Item 2 (Left) -->
-                <div class="flex flex-col md:flex-row items-center justify-between group" data-aos="fade-up">
-                    <div class="w-full md:w-5/12 pr-0 md:pr-12 text-left md:text-right">
-                        <div class="glass-card p-8 rounded-xl border-l-2 md:border-l-0 md:border-r-2 border-lux-pink hover:bg-white/5 transition-all">
-                            <span class="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-widest">Aug 2018 - Jun 2022</span>
-                            <h4 class="text-xl font-bold text-white mb-1">B.Tech (Computer Engineering)</h4>
-                            <p class="text-lux-pink font-medium text-sm mb-4">Presidency University, Bengaluru</p>
-                            <div class="inline-block bg-lux-pink/10 border border-lux-pink/20 px-3 py-1 rounded text-xs font-bold text-lux-pink">
-                                6.34 CGPA
-                            </div>
-                        </div>
+                <!-- Education Item 2 -->
+                <div class="glass-card p-6 rounded-xl border-t-2 border-lux-pink bg-white/5 hover:bg-white/10 transition-all group flex flex-col h-full">
+                    <div class="mb-4">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Aug 2018 - Jun 2022</span>
+                        <div class="h-1 w-10 bg-lux-pink rounded-full"></div>
                     </div>
-                    <div class="hidden md:block w-4 h-4 rounded-full bg-lux-pink border-[3px] border-[#030303] z-20 shadow-[0_0_15px_#FF00CC] group-hover:scale-150 transition-transform duration-300"></div>
-                    <div class="hidden md:block w-5/12"></div>
-                </div>
-
-                <!-- Education Item 3 (Right) -->
-                <div class="flex flex-col md:flex-row items-center justify-between group" data-aos="fade-up">
-                    <div class="hidden md:block w-5/12"></div>
-                    <div class="hidden md:block w-4 h-4 rounded-full bg-gray-600 border-[3px] border-[#030303] z-20 group-hover:bg-white transition-colors duration-300"></div>
-                    <div class="w-full md:w-5/12 pl-0 md:pl-12">
-                        <div class="glass-card p-8 rounded-xl border-l-2 border-gray-700 hover:bg-white/5 transition-all">
-                            <span class="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-widest">Jun 2016 - Apr 2018</span>
-                            <h4 class="text-xl font-bold text-white mb-1">Class XII</h4>
-                            <p class="text-gray-400 font-medium text-sm mb-4">Narayana Junior College, Anantapur</p>
-                            <div class="inline-block bg-white/5 border border-white/10 px-3 py-1 rounded text-xs font-bold text-gray-300">
-                                86.66%
-                            </div>
+                    <h4 class="text-lg font-bold text-white mb-2 leading-tight">B.Tech (Comp. Engg)</h4>
+                    <p class="text-lux-pink font-medium text-xs mb-4 flex-grow">Presidency University, Bengaluru</p>
+                    <div class="mt-auto">
+                        <div class="inline-block bg-lux-pink/10 border border-lux-pink/20 px-3 py-1 rounded text-[10px] font-bold text-lux-pink">
+                            6.34 CGPA
                         </div>
                     </div>
                 </div>
 
-                <!-- Education Item 4 (Left) -->
-                <div class="flex flex-col md:flex-row items-center justify-between group" data-aos="fade-up">
-                    <div class="w-full md:w-5/12 pr-0 md:pr-12 text-left md:text-right">
-                        <div class="glass-card p-8 rounded-xl border-l-2 md:border-l-0 md:border-r-2 border-gray-700 hover:bg-white/5 transition-all">
-                            <span class="text-xs font-bold text-gray-500 mb-2 block uppercase tracking-widest">Jun 2015 - May 2016</span>
-                            <h4 class="text-xl font-bold text-white mb-1">Class X</h4>
-                            <p class="text-gray-400 font-medium text-sm mb-4">Montessori Indus School, Kurnool</p>
-                            <div class="inline-block bg-white/5 border border-white/10 px-3 py-1 rounded text-xs font-bold text-gray-300">
-                                8.5 CGPA
-                            </div>
+                <!-- Education Item 3 -->
+                <div class="glass-card p-6 rounded-xl border-t-2 border-gray-600 bg-white/5 hover:bg-white/10 transition-all group flex flex-col h-full">
+                    <div class="mb-4">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Jun 2016 - Apr 2018</span>
+                        <div class="h-1 w-10 bg-gray-600 rounded-full"></div>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 leading-tight">Class XII</h4>
+                    <p class="text-gray-400 font-medium text-xs mb-4 flex-grow">Narayana Junior College, Anantapur</p>
+                    <div class="mt-auto">
+                        <div class="inline-block bg-white/5 border border-white/10 px-3 py-1 rounded text-[10px] font-bold text-gray-300">
+                            86.66%
                         </div>
                     </div>
-                    <div class="hidden md:block w-4 h-4 rounded-full bg-gray-600 border-[3px] border-[#030303] z-20 group-hover:bg-white transition-colors duration-300"></div>
-                    <div class="hidden md:block w-5/12"></div>
+                </div>
+
+                <!-- Education Item 4 -->
+                <div class="glass-card p-6 rounded-xl border-t-2 border-gray-600 bg-white/5 hover:bg-white/10 transition-all group flex flex-col h-full">
+                    <div class="mb-4">
+                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest block mb-1">Jun 2015 - May 2016</span>
+                        <div class="h-1 w-10 bg-gray-600 rounded-full"></div>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2 leading-tight">Class X</h4>
+                    <p class="text-gray-400 font-medium text-xs mb-4 flex-grow">Montessori Indus School, Kurnool</p>
+                    <div class="mt-auto">
+                        <div class="inline-block bg-white/5 border border-white/10 px-3 py-1 rounded text-[10px] font-bold text-gray-300">
+                            8.5 CGPA
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
